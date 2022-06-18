@@ -1,0 +1,44 @@
+https://fontawesome.com/docs/web/add-icons/svg-symbols
+
+Step-by-Step
+
+We'll define these icons as symbols: pencil, trash, and star.
+  <!-- Define the symbols, these are invisible on the page -->
+  <i data-fa-symbol="delete" class="fas fa-trash fa-fw"></i>
+  <i data-fa-symbol="edit" class="fas fa-pencil fa-fw"></i>
+  <i data-fa-symbol="favorite" class="fas fa-star fa-fw"></i>
+
+  <!-- Use the defined symbols -->
+  <svg><use xlink:href="#edit"></use></svg>
+  <svg><use xlink:href="#delete"></use></svg>
+  <svg><use xlink:href="#favorite"></use></svg>
+
+
+
+Using data-fa-symbol informs Font Awesome SVG with JavaScript to create the symbol. The value of this attribute becomes the name.
+
+
+  <!-- Name symbols with the value of data-fa-symbol -->
+  <i data-fa-symbol="picture-taker" class="fas fa-camera"></i>
+
+  <!-- Use the defined name -->
+  <svg><use xlink:href="#picture-taker"></use>
+
+
+Make Sure to Add Some CSS
+One of the downsides to SVG sprites is that extra styling is necessary to make them behave. When using symbols you will need to handle this yourself.
+
+  <!-- A quick, reasonable place to start with styling your symbols -->
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -.125em;
+    }
+  </style>
+
+  <!-- Name symbols with the value of data-fa-symbol -->
+  <i data-fa-symbol="picture-taker" class="fas fa-camera"></i>
+
+  <!-- Use the defined name -->
+  <svg class="icon"><use xlink:href="#picture-taker"></use></svg> Say Cheese!
