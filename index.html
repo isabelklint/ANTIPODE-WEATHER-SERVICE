@@ -6,13 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Weather Map</title>
+        <!-- FONT AWESOME   -->
+        <script src="https://kit.fontawesome.com/6a50e3be5d.js" crossorigin="anonymous"></script>
+    <!-- GOOGLE FONTS NEEDED MAYBE  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--<link
+      href="https://fonts.googleapis.com/css2?family=XXX&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- google font -->
 </head>
 <body>
     <div class="container">
-<h1>Hello world.</h1>
+        <div class="row" id="search-area">
+            <div class="col"></div>
+            <div class="col">
+                <div class="text-right">
+                    <form id="search-form">
+                        <input
+                        id="searchbar"
+                        type="text"
+                        placeholder="Enter a city name..."
+                        />
+                        <button 
+                        id="city-search-button">square img
+                        </button>
+                    </form>
+                    <form id="no-search-form">
+                        <input
+                        id="location-bar"
+                        type="none"
+                        placeholder="See your location's weather"
+                        />
+                        <button 
+                        id="location-button">square img
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col text-center" id="left">
+                <div class="upsidedown">
+                    <div id="upsidedown-info">
+                        <!-- city name, temp, and weather icon -->
+                        <h2 id="upsidedown-city-name">City name</h2>
+                        <h1 id="upsidedown-temp">100°F</h1>
+                        <span id="upsidedown-icon">☼</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col justify-content-center" id="middle">
+                <span id="circlearrows">
+                    <img src="images/circlearrows.png" 
+                    alt="icon shows cities are antipodes" width="200px"/>
+                </span>
+            </div>
+            <div class="col text-center" id="right">
 
+                        <div class="row" id="result-area">
+                            <div class="icon-area"><h1 id="big-icon"><i class="fa-solid fa-rainbow"></i>
+                                </h1>
+                            </div>
+                            <div class="row" id="last-five-days">
+                                <!-- columns go here-->
+                                <div class="col-2">
+                                    <div class="date">M</div>
+                                    <div class="icon">☼</div>
+                                    <div class="min-max-temps"><span id="min">18•</span><span id="max">22•</span></div>
+                                </div>
+                            </div>
+                            <div class="row" id="name-temp-day-time">
+                                <!-- city name, temp, and weather icon -->
+                                <h3 id="city-name">City name</h3>
+                                <h2 id="temp">100°F</h2>
+                                <span id="day-time"></span>
+                            </div>
+                            <div class="row" id="weather-info">
+                            <!-- description goes here-->
+                                <div class="weather-row"><span id="day-name">Sunday</span><span id="time">00:00AM</span>
+                                <div class="weather-row"><span id="humidity">100%</span><span id="wind">5km/h</span></div>
+                                <div class="weather-row"><span id="description">Something in the way</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div>
+            <footer>
+            <!-- copyright and socials-->
+            </footer>
+        </div>
     </div>
+    <script src="src/index.js"></script>
 </body>
 </html>

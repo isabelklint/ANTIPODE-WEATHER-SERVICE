@@ -1,0 +1,84 @@
+/* TO DO: 
+resize h1, h2 etc. 
+change submit buttons
+align properly
+check accessibility, colour blindness
+do write up
+finish table
+make current location the default
+*/
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(90deg, #BF6F7A 50%, #6C6C6C 50%);
+} 
+
+div.top {
+    display: block;
+    float: right;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+form {
+    display: inline-block !important;
+}
+
+col {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    background-color: #BF6F7A;
+}
+
+#left {
+    text-align: left;
+    color: #424242;
+    transform: scale(-1,-1);
+}
+    
+#right {
+    text-align: left;
+    color:white;
+}
+
+#middle {
+    padding: 0;
+    margin: 0 auto;
+}
+
+#last-five-days {
+    font-size: 13px;
+    text-align: center;
+}
+
+#min { 
+    padding: 0px;
+}
+
+#max {
+    font-weight: bold;
+}
+
+.weather-row {
+    display: block;
+    text-align: left;
+}
+
+#name-temp-day-time {
+    text-align: left;
+}
+
+span {
+    padding: 5px;
+}
+
+img {
+/* make image fixed to center middle absolute */
+/* make a center row for this that also holds city name, country name, temp and icon
+/* make image a vector */
+}
