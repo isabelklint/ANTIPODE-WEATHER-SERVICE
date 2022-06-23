@@ -22,23 +22,35 @@ body {
     background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%);
 } 
 
-
-#search-area {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 125px;
-}
-
-.box {
-    display: inline-block !important;
-}
-
-.col {
-    color: white;
-}
-
 form {
     display: inline-block !important;
+}
+
+span #min { 
+    padding: 0px;
+    text-align: left;
+}
+
+span #max {
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+}
+
+img {
+    height: 80px;
+    width: 110px;
+/* make image a vector */
+}
+
+p{
+ margin-bottom: 0px !important;
+}
+
+
+#search-area {
+    margin-bottom: 40px;
+    margin-left: 125px;
 }
 
 #left {
@@ -47,21 +59,6 @@ form {
     padding: 20px;
     color: #444444;
 }
-
-.headline1 {
-    display: block;
-    text-align: left;
-    padding-top: 20px;
-    color: #444444;
-    font-size: 22px;
-}
-
-.headline2 {
-    display: block;
-    color: white;
-    font-size: 22px;
-}
-
 
 #middle {
     padding: 0;
@@ -77,6 +74,47 @@ form {
     padding: 20px;
 }
 
+/* #last-five-days {
+    font-size: 12px;
+    margin: 20px;
+} */
+
+#prediction {
+ text-align: left;
+}
+
+#lower {
+    text-align: right;
+    color:white;
+    max-width: 300px;
+    padding: 20px;
+}
+
+#name-temp {
+    text-align: left;
+}
+
+.box {
+    display: inline-block !important;
+}
+
+.col {
+    color: white;
+}
+
+.headline1 {
+    display: block;
+    text-align: left;
+    padding-top: 20px;
+    color: #444444;
+    font-size: 22px;
+}
+
+.headline2 {
+    display: block;
+    color: white;
+    font-size: 22px;
+}
 
 .form {
     background-color: #A9626C;/*#BF6F7A;*/
@@ -114,51 +152,14 @@ form {
     border: 1px solid #5C5C5C;
     }
 
-#last-five-days {
-    font-size: 12px;
-    margin: 20px;
-}
-
-span #min { 
-    padding: 0px;
-    text-align: left;
-}
-
-#prediction {
- text-align: left;
-}
-
-span #max {
-    font-weight: bold;
-    padding: 5px;
-    text-align: left;
-}
-
 .weather-row {
     display: block;
     text-align: left;
     font-size: 12px;
 }
 
-#lower {
-    text-align: right;
-    color:white;
-    max-width: 300px;
-    padding: 20px;
-}
-
-#name-temp {
-    text-align: left;
-}
-
 .min-max-temps {
     padding: 5px;
-}
-
-img {
-    height: 80px;
-    width: 110px;
-/* make image a vector */
 }
 
 .big {
@@ -170,7 +171,7 @@ img {
     font-size: 56px;
 }
 
-.footer {
-    font-size: smaller;
+.smaller {
+    font-size: 14px;
     color: #444444;
 }
