@@ -27,81 +27,83 @@
         <div class="row" id="search-area">
             <div class="col"></div>
             <div class="col">
-                <div class="text-right">
-                    <form id="search-form">
-                        <input
-                        id="searchbar"
-                        type="text"
-                        placeholder="Enter a city name..."
-                        />
-                        <button 
-                        id="city-search-button">square img
-                        </button>
-                    </form>
-                    <form id="no-search-form">
-                        <input
-                        id="location-bar"
-                        type="none"
-                        placeholder="See your location's weather"
-                        />
-                        <button 
-                        id="location-button">square img
-                        </button>
-                    </form>
+                <div class="box">
+                    <div class="headline">Find the weather in...</div>
+                    <div>
+                        <input class="form" id="searchbar" type="text" placeholder="Enter a city name..."/>
+                        <input class="button"  value="•" id="citysearchbutton"></input>
+                    </div>
+                    <div>
+                        <input class="form"id="locationbar" type="text" placeholder="See your location's weather"/>
+                        <input class="button" value="•" id="locationbutton"></input>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col text-center" id="left">
+            <div class="col" id="left">
                 <div class="upsidedown">
                     <div id="upsidedown-info">
                         <!-- city name, temp, and weather icon -->
-                        <h2 id="upsidedown-city-name">City name</h2>
-                        <h1 id="upsidedown-temp">100°F</h1>
-                        <span id="upsidedown-icon">☼</span>
+                        <h2 class="big"><span id="upsidedown-city-name">City name</span></h2>
+                        <h2 id="upsidedown-temp" class="big"><span id="utemp">40</span><span id="degrees">°C</span></h2>
+                        <span id="upsidedown-icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
+
                     </div>
                 </div>
             </div>
-            <div class="col justify-content-center" id="middle">
+            <div class="col" id="middle">
                 <span id="circlearrows">
                     <img src="images/circlearrows.png" 
-                    alt="icon shows cities are antipodes" width="200px"/>
+                    alt="icon shows cities are antipodes"/>
                 </span>
             </div>
             <div class="col text-center" id="right">
-
-                        <div class="row" id="result-area">
-                            <div class="icon-area"><h1 id="big-icon"><i class="fa-solid fa-rainbow"></i>
-                                </h1>
-                            </div>
-                            <div class="row" id="last-five-days">
-                                <!-- columns go here-->
-                                <div class="col-2">
-                                    <div class="date">M</div>
-                                    <div class="icon">☼</div>
-                                    <div class="min-max-temps"><span id="min">18•</span><span id="max">22•</span></div>
-                                </div>
-                            </div>
-                            <div class="row" id="name-temp-day-time">
-                                <!-- city name, temp, and weather icon -->
-                                <h3 id="city-name">City name</h3>
-                                <h2 id="temp">100°F</h2>
-                                <span id="day-time"></span>
-                            </div>
-                            <div class="row" id="weather-info">
-                            <!-- description goes here-->
-                                <div class="weather-row"><span id="day-name">Sunday</span><span id="time">00:00AM</span>
-                                <div class="weather-row"><span id="humidity">100%</span><span id="wind">5km/h</span></div>
-                                <div class="weather-row"><span id="description">Something in the way</span></div>
-                            </div>
-                        </div>
+                <div class="row" id="result-area">
+                    <div class="row" id="name-temp">
+                        <!-- city name, temp, and weather icon -->
+                        <h2  class="big" id="city-name">City name</h2>
+                        <h2 class="big"><span id="temp">40</span><span id="degrees">°C</span></h2>
+                    </div>
+                    <div class="icon-area">
+                        <span id="icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
+                        </span>
                     </div>
                 </div>
-            <div>
-            <footer>
-            <!-- copyright and socials-->
-            </footer>
+            </div>
         </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col" id="lower">
+                <div class="box">
+                    <div class="row" id="weather-info">
+                        <!-- description goes here-->
+                            <div class="weather-row">
+                                <span id="day-time"></span>
+                            </div>
+                            <div class="weather-row">
+                                <span>Humidity</span><span id="humidity"></span><span>. Windspeed<span id="wind"></span><span>.</span>                           </div>
+                            <div class="weather-row">
+                                <span id="description" style="text-transform: uppercase;">Weather description.</span>
+                            </div>
+                    </div>
+                    <!-- DO NOT DO THIS PART YET
+                    <div class="row" id="last-five-days">
+                        <div class="col-2 prediction">
+                            <div class="date">Day</div>
+                            <div class="icon">☼</div>
+                            <div id="min">Min</div>
+                            <div id="max">Max</div>
+                        </div>
+                    </div> 
+                -->
+                </div>
+            </div>
+        </div>
+        <footer>
+            <!-- copyright and socials-->
+            <p>copyright and socials</p>
+        </footer>
     </div>
     <script src="src/index.js"></script>
 </body>

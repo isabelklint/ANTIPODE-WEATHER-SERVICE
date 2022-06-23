@@ -31,14 +31,16 @@ function setTemp(response) {
     document.querySelector("#temp").innerHTML = Math.round(
       response.data.main.temp
     );
-
-    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-    document.querySelector("#wind").innerHTML = Math.round(
+    document.querySelector("#humidity").innerHTML = ` ` + response.data.main.humidity+`%`;
+    document.querySelector("#wind").innerHTML = ` ` + Math.round(
       response.data.wind.speed
-    );
-    document.querySelector("#description").innerHTML =
-      response.data.weather[0].main;
-      console.log(response.data);
+    )+`km/h`;
+    document.querySelector("#description").innerHTML = response.data.weather[0].description + `.`;
+    let icon = response.data.weather[0].icon;
+    let faIcon = getfaIcon(icon);
+    document.querySelector("#icon").innerHTML =
+      faIcon;
+    getUpsidedown(response.data.name);
 }
 
 // GET CURRENT CITY
@@ -53,9 +55,15 @@ function getCityFromLocation(position) {
 function getLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(getCityFromLocation);
+    setWaves();
+}
+function setWaves () {
+    document.querySelector("#upsidedown-city-name").innerHTML = `<i class="fa-solid fa-water"></i>`;
+    document.querySelector("#upsidedown-icon").innerHTML = "";
+    document.querySelector("#searchbar").value = "";
 }
 
-let locationButton = document.querySelector("#location-button");
+let locationButton = document.querySelector("#locationbutton");
 locationButton.addEventListener("click", getLocation);
 
 
@@ -64,60 +72,67 @@ function getCityFromSearch(city) {
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(`${apiUrl}`).then(setTemp);
+    setWaves();
 }
 
-function doSubmit(event) {
+function doClick(event) {
     event.preventDefault();
     let city = document.querySelector("#searchbar").value;
     getCityFromSearch(city);
 }
 
-let search = document.querySelector("#search-form");
-search.addEventListener("submit", doSubmit);
-search.addEventListener("submit", doUpsideDownSubmit);
+let search = document.querySelector("#citysearchbutton");
+search.addEventListener("click", doClick);
+search.addEventListener("click", doUpsidedownClick);
 
 // GET THE UPSIDEDOWN
 // SET UPSIDEDOWN TEMP
 function setUpsidedownTemp(response) {
-    // TO DO : CATCH EXCEPTIONS
-    // LAND OR SEA?
-    let code = response.data.sys.country;
-    let countryName = getCountryName(code);
-    document.querySelector("#upsidedown-city-name").innerHTML = 
-    `${response.data.name}, ${countryName}`;
-    document.querySelector("#upsidedown-temp").innerHTML = Math.round(response.data.main.temp);
-    console.log("error 3");
+    let citycode = response.data.name;
+    if (citycode != '') {
+        let countrycode = response.data.sys.country;
+        let countryName = getCountryName(countrycode);
+        document.querySelector("#upsidedown-city-name").innerHTML = 
+            `${response.data.name}, ${countryName}`;
+        document.querySelector("#upsidedown-temp").innerHTML = Math.round(response.data.main.temp);
+
+        let icon = response.data.weather[0].icon;
+        let faIcon = getfaIcon(icon);
+        document.querySelector("#upsidedown-icon").innerHTML =
+          faIcon;
+        } else {
+            document.querySelector("#utemp").innerHTML = Math.round(response.data.main.temp);
+            setWaves();
+        }
+    }
 
     // document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     // document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
     // document.querySelector("#description").innerHTML =response.data.weather[0].main;
     // console.log(response.data);
-}
 
 // GET UPSIDEDOWN WEATHER
 function getUpsidedown(city) {
     let apiKey = `9fb8e037b1099cd883b83ce0d579fc0f`;
     let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
     // http://api.positionstack.com/v1/forward?access_key=9fb8e037b1099cd883b83ce0d579fc0f&query=paris;
-    axios.get(`${apiUrl}`).then(getCity);
-    function getCity (response) {
-        let latitude = response.data.data[0].latitude;
-        let longitude = response.data.data[0].longitude;
-        let upsidedownLatitude = Math.round(-latitude);
-        let upsidedownLongitude = Math.round(180-longitude);
-        let apiKey = "af299e40c9c7667df5a6bc3d09004719";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(setUpsidedownTemp);
-        console.log("error 2");
-
-    }
+    axios.get(`${apiUrl}`).then(getOtherCity);
 }
 
-function doUpsideDownSubmit(event) {
+function getOtherCity (response) {
+    let latitude = response.data.data[0].latitude;
+    let longitude = response.data.data[0].longitude;
+    let upsidedownLatitude = Math.round(-latitude);
+    let upsidedownLongitude = Math.round(180-longitude);
+    let apiKey = "af299e40c9c7667df5a6bc3d09004719";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(setUpsidedownTemp);
+}
+
+function doUpsidedownClick(event) {
     event.preventDefault();
     let city = document.querySelector("#searchbar").value;
     getUpsidedown(city);
-    console.log("error 1");
 }
 
 // calculate antipode
@@ -383,5 +398,34 @@ function getCountryName (countryCode) {
         return isoCountries[countryCode];
     } else {
         return countryCode;
+    }
+}
+
+var faIcons = {
+    '01d' : '<i class="fa-solid fa-sun"></i>',  /* clear sky */
+    '02d' : '<i class="fa-solid fa-cloud"></i>',  /* few clouds */
+    '03d' : '<i class="fa-solid fa-cloud"></i>',  /* scattered clouds */
+    '04d' : '<i class="fa-solid fa-cloud"></i>',  /* broken clouds */
+    '09d' : '<i class="fa-solid fa-cloud-rain"></i>',  /* shower rain */
+    '10d' : '<i class="fa-solid fa-cloud-showers-heavy"></i>',  /* rain */
+    '11d' : '<i class="fa-solid fa-bolt"></i>',  /* thunderstorm */
+    '13d' : '<i class="fa-solid fa-snowflake"></i>',  /* snow */
+    '50d' : '<i class="fa-solid fa-cloud-fog"></i>',  /* mist */
+    '01n' : '<i class="fa-solid fa-moon"></i>',  /* same as above but n for night */
+    '02n' : '<i class="fa-solid fa-cloud-moon"></i>',
+    '03n' : '<i class="fa-solid fa-cloud-moon"></i>',
+    '04n' : '<i class="fa-solid fa-cloud-moon"></i>',
+    '09n' : '<i class="fa-solid fa-cloud-moon-rain"></i>',
+    '10n' : '<i class="fa-solid fa-cloud-moon-rain"></i>',
+    '11n' : '<i class="fa-solid fa-bolt"></i>',  /* thunderstorm */
+    '13n' : '<i class="fa-solid fa-snowflake"></i>',
+    '50n' : '<i class="fa-solid fa-cloud-fog"></i>',
+};
+
+function getfaIcon (icon) {
+    if (faIcons.hasOwnProperty(icon)) {
+        return faIcons[icon];
+    } else {
+        return icon;
     }
 }

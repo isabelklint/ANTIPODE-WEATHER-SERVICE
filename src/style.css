@@ -1,20 +1,23 @@
 /* TO DO: 
-resize h1, h2 etc. 
-change submit buttons
-align properly
+unit conversion 
+get better 'water' icon
+make 'search for cities w/ an upsidedown' tooltip
+update copyright and socials
 check accessibility, colour blindness
-do write up
-finish table
-make current location the default
+set attribute for alt text on icons in js:
+weatherIconElement.setAttribute(
+    "alt",
+    `${response.data.weather[0].description}`
+  );
+Next time:
+  finish predictions
+  do write up
 */
-
-html {
-    height: 100%;
-}
 
 body {
     height: 100%;
-    background: linear-gradient(90deg, #BF6F7A 50%, #6C6C6C 50%);
+    background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%);
+    color: white;
 } 
 
 div.top {
@@ -25,60 +28,142 @@ div.top {
     padding: 10px;
 }
 
+#search-area {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 125px;
+}
+
+.box {
+    display: inline-block !important;
+}
+
 form {
     display: inline-block !important;
 }
 
 col {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:sans-serif;
     font-weight: lighter;
     background-color: #BF6F7A;
 }
 
 #left {
-    text-align: left;
     color: #424242;
     transform: scale(-1,-1);
+    max-width: 300px;
+    padding: 20px;
+
 }
     
 #right {
-    text-align: left;
+    text-align: right;
     color:white;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.headline {
+    color: white;
+    font-size: 22px;
 }
 
 #middle {
     padding: 0;
     margin: 0 auto;
+    text-align: center;
+    max-width: 120px;
 }
+
+.form {
+    background-color: #BF6F7A;
+    border-bottom: 2px solid #5C5C5C;
+    font-size: 12px;
+    font-weight:lighter;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    float: left;
+    padding-left: 6px;
+    margin-right: 0px;
+    margin-bottom: 2px;
+    width: 180px;
+    line-height: 18px;
+}
+
+.button {
+    background-color: #DF96A0;
+    float: left;
+    border-top: none;
+    border-left: none;
+    border-right: 2px solid #5C5C5C;
+    border-bottom: 2px solid #5C5C5C;
+    color: #DF96A0;
+    font-size: small;
+    width: 24px;
+    margin: 0 auto;
+    line-height: 18px;
+
+}
+
+.button:hover {
+    border: 1px solid #5C5C5C;
+    }
 
 #last-five-days {
-    font-size: 13px;
-    text-align: center;
+    font-size: 12px;
+    margin: 20px;
 }
 
-#min { 
+span #min { 
     padding: 0px;
+    text-align: left;
 }
 
-#max {
+#prediction {
+ text-align: left;
+}
+
+span #max {
     font-weight: bold;
+    padding: 5px;
+    text-align: left;
 }
 
 .weather-row {
     display: block;
     text-align: left;
+    font-size: 12px;
 }
 
-#name-temp-day-time {
+#lower {
+    text-align: right;
+    color:white;
+    max-width: 300px;
+    padding: 20px;
+}
+
+#name-temp {
     text-align: left;
 }
 
-span {
+.min-max-temps {
     padding: 5px;
 }
 
 img {
-/* make image fixed to center middle absolute */
+    height: 80px;
+    width: 110px;
 /* make a center row for this that also holds city name, country name, temp and icon
 /* make image a vector */
+}
+
+.big {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.big-icon {
+    font-size: 56px;
 }
