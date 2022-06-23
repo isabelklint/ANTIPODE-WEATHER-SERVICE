@@ -20,7 +20,6 @@ Next time:
 body {
     height: 100%;
     background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%);
-    color: white;
 } 
 
 
@@ -36,11 +35,6 @@ body {
 
 form {
     display: inline-block !important;
-}
-
-col {
-    font-family:sans-serif;
-    font-weight: lighter;
 }
 
 #left {
