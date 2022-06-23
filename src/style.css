@@ -23,13 +23,6 @@ body {
     color: white;
 } 
 
-div.top {
-    display: block;
-    float: right;
-    width: 300px;
-    border: 3px solid #73AD21;
-    padding: 10px;
-}
 
 #search-area {
     margin-top: 40px;
@@ -64,7 +57,16 @@ col {
     padding: 20px;
 }
 
-.headline {
+.headline1 {
+    display: block;
+    text-align: left;
+    padding-top: 20px;
+    color: #444444;
+    font-size: 22px;
+}
+
+.headline2 {
+    display: block;
     color: white;
     font-size: 22px;
 }
