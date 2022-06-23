@@ -27,10 +27,11 @@ span.innerHTML = getTime(now);
 
 // GET CITY WEATHER
 function setTemp(response) {
+    cvalue =  document.querySelector("#temp").innerHTML = Math.round(
+        response.data.main.temp
+      );
     document.querySelector("#city-name").innerHTML = response.data.name;
-    document.querySelector("#temp").innerHTML = Math.round(
-      response.data.main.temp
-    );
+    document.querySelector("#temp").innerHTML = cvalue;
     document.querySelector("#humidity").innerHTML = ` ` + response.data.main.humidity+`%`;
     document.querySelector("#wind").innerHTML = ` ` + Math.round(
       response.data.wind.speed
@@ -55,13 +56,14 @@ function getCityFromLocation(position) {
 function getLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(getCityFromLocation);
-    setWaves();
+    //setWaves();
 }
-function setWaves () {
-    document.querySelector("#upsidedown-city-name").innerHTML = `<i class="fa-solid fa-water"></i>`;
-    document.querySelector("#upsidedown-icon").innerHTML = "";
-    document.querySelector("#searchbar").value = "";
-}
+
+//function setWaves () {
+//    document.querySelector("#upsidedown-city-name").innerHTML = `<i class="fa-solid fa-water"></i>`;
+//    document.querySelector("#upsidedown-icon").innerHTML = "";
+ //   document.querySelector("#searchbar").value = "";
+//}
 
 let locationButton = document.querySelector("#locationbutton");
 locationButton.addEventListener("click", getLocation);
@@ -72,7 +74,7 @@ function getCityFromSearch(city) {
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(`${apiUrl}`).then(setTemp);
-    setWaves();
+    //setWaves();
 }
 
 function doClick(event) {
@@ -94,15 +96,16 @@ function setUpsidedownTemp(response) {
         let countryName = getCountryName(countrycode);
         document.querySelector("#upsidedown-city-name").innerHTML = 
             `${response.data.name}, ${countryName}`;
-        document.querySelector("#upsidedown-temp").innerHTML = Math.round(response.data.main.temp);
-
+        let cuvalue =  document.querySelector("#upsidedown-temp").innerHTML = Math.round(response.data.main.temp);
+        document.querySelector("#upsidedown-temp").innerHTML = cuvalue;
+        document.querySelector("#units").innerHTML="°C";
         let icon = response.data.weather[0].icon;
         let faIcon = getfaIcon(icon);
         document.querySelector("#upsidedown-icon").innerHTML =
           faIcon;
         } else {
             document.querySelector("#utemp").innerHTML = Math.round(response.data.main.temp);
-            setWaves();
+            //setWaves();
         }
     }
 
@@ -135,14 +138,40 @@ function doUpsidedownClick(event) {
     getUpsidedown(city);
 }
 
-// calculate antipode
-// latitude
-// longitude
-// convert it to the opposite hemisphere
-// if your latitude is 40.7128°N simply flip that to -40.7128°S. 
-// For longitude, you will have to subtract the longitude of your current location from 180°. 
-// In the case of New York City again,  
-// you would subtract 74.0059° W from 180°, leaving you with 105.9941°E.
+function switchToFahrenheit (event) {
+    event.preventDefault();
+    let switchTemp = document.querySelector("#temp");
+    let ftemp = (cvalue * 9/5) + 32;
+    switchTemp.innerHTML = Math.round(ftemp);
+    let switchUTemp = document.querySelector("#upsidedown-temp");
+    let futemp = (cuvalue * 9/5) + 32;
+    switchUTemp.innerHTML = Math.round(futemp);
+    document.querySelector("#units").innerHTML="°F";
+}
+
+function switchToCentigrade (event) {
+    event.preventDefault();
+    let switchTemp = document.querySelector("#temp");
+    switchTemp.innerHTML = cvalue;
+    let switchUTemp = document.querySelector("#temp");
+    switchUTemp.innerHTML = cuvalue;
+    document.querySelector("#units").innerHTML="°C";
+}
+
+// UNIT CONVERSION
+
+let fdegree = document.querySelector("#fahrenheitLink");
+fdegree.addEventListener("click", switchToFahrenheit);
+
+let cdegree = document.querySelector("#centigradeLink");
+cdegree.addEventListener('click', switchToCentigrade);
+
+let cvalue = null;
+let cuvalue = null;
+// let city = "Jakarta"; //fix this!!
+
+
+// BIG ARRAYS BELOW FOR COUNTRYCODE --> COUNTRY AND PNG --> FA AWESOME
 
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81
 var isoCountries = {

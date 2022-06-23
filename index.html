@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Weather Map</title>
@@ -18,8 +17,8 @@
       rel="stylesheet"/>
     <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- google font -->
+    <link rel="stylesheet" href="src/style.css"/>
 </head>
 <body>
     <div class="container">
@@ -50,10 +49,15 @@
                 <div class="upsidedown">
                     <div id="upsidedown-info">
                         <!-- city name, temp, and weather icon -->
-                        <h2 class="big"><span id="upsidedown-city-name">City name</span></h2>
-                        <h2 id="upsidedown-temp" class="big"><span id="utemp">40</span><span id="cdegrees">°C</span></h2>
+                        <h2  class="big" id="upsidedown-city-name">Antipode</h2>
+                        <h2 class="big">
+                            <span id="upsidedown-temp"></span>
+                            <span id="units"></span>
+                        </h2>
+                    </div>
+                    <div class="icon-area">
                         <span id="upsidedown-icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
-
+                        </span>
                     </div>
                 </div>
             </div>
@@ -67,8 +71,15 @@
                 <div class="row" id="result-area">
                     <div class="row" id="name-temp">
                         <!-- city name, temp, and weather icon -->
-                        <h2  class="big" id="city-name">City name</h2>
-                        <h2 class="big"><span id="temp">40</span><span id="degrees">°C</span id="bar"><span> | </span><span id="fdegrees">°F</span></h2>
+                        <h2  class="big" id="city-name">Antipode</h2>
+                        <h2 class="big">
+                            <span id="temp"></span>
+                            <span id="c">
+                                <a href="#" id="centigradeLink">°C</a></span>
+                                <span id="bar"> | </span>
+                            <span id="f"><a href="#" id="fahrenheitLink">°F</a></span>
+                            </span>
+                        </h2>
                     </div>
                     <div class="icon-area">
                         <span id="icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
@@ -87,7 +98,12 @@
                                 <span id="day-time"></span>
                             </div>
                             <div class="weather-row">
-                                <span>Humidity</span><span id="humidity"></span><span>. Windspeed<span id="wind"></span><span>.</span>                           </div>
+                                <span>Humidity</span>
+                                <span id="humidity"></span>
+                                <span>. Windspeed</span>
+                                <span id="wind"></span>
+                                <span>.</span>
+                            </div>
                             <div class="weather-row">
                                 <span id="description" style="text-transform: uppercase;">Weather description.</span>
                             </div>
@@ -106,10 +122,8 @@
             </div>
         </div>
         <div class="smaller">
-            <a
-            href="https://github.com/wecodeschool/vanilla-weather-app"
-            target="_blank"
-            >Open-source code</a> by Isabel Klint.
+            <p>Coded by <a href="link">Isabel Klint.</a></p>
+            <p><a href="link">Open-sourced on GitHub</a> and <a href="link">hosted on Netlify.</a></p>
         </div>
     </div>
     <script src="src/index.js"></script>

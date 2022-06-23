@@ -1,5 +1,8 @@
 /* TO DO: 
 fix open code link
+get rid of link ugly colour
+get ride of search click button ugly hover colour
+get rid of link underline
 unit conversion and styling
 get better 'water' icon
 move upsidedown icon
@@ -37,15 +40,30 @@ span #max {
     text-align: left;
 }
 
-img {
+/* img {
     height: 80;
-    width: 112px;
-/* make image a vector */
-}
+    width: 113px;
+} */
 
 p{
  margin-bottom: 0px !important;
 }
+
+a:link {
+    color: #444444;
+    text-decoration: none;
+  }
+
+a:visited {
+    color: #444444;
+    text-decoration: none;
+  }
+
+a:hover {
+        color: #000000;
+        text-decoration: none;
+}
+
 
 
 #search-area {
@@ -175,4 +193,9 @@ p{
 .smaller {
     font-size: 14px;
     color: #444444;
+}
+
+#bar {
+    font-size: 36px;
+    color: #444444;    
 }
