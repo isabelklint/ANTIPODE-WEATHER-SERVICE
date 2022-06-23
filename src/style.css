@@ -1,6 +1,8 @@
 /* TO DO: 
-unit conversion 
+fix open code link
+unit conversion and styling
 get better 'water' icon
+move upsidedown icon
 make 'search for cities w/ an upsidedown' tooltip
 update copyright and socials
 check accessibility, colour blindness
@@ -9,6 +11,7 @@ weatherIconElement.setAttribute(
     "alt",
     `${response.data.weather[0].description}`
   );
+make image a vector
 Next time:
   finish predictions
   do write up
@@ -45,15 +48,13 @@ form {
 col {
     font-family:sans-serif;
     font-weight: lighter;
-    background-color: #BF6F7A;
 }
 
 #left {
-    color: #424242;
     transform: scale(-1,-1);
     max-width: 300px;
     padding: 20px;
-
+    color: #444444;
 }
     
 #right {
@@ -76,7 +77,7 @@ col {
 }
 
 .form {
-    background-color: #BF6F7A;
+    background-color: #A9626C;/*#BF6F7A;*/
     border-bottom: 2px solid #5C5C5C;
     font-size: 12px;
     font-weight:lighter;
@@ -155,7 +156,6 @@ span #max {
 img {
     height: 80px;
     width: 110px;
-/* make a center row for this that also holds city name, country name, temp and icon
 /* make image a vector */
 }
 
@@ -166,4 +166,9 @@ img {
 
 .big-icon {
     font-size: 56px;
+}
+
+.footer {
+    font-size: smaller;
+    color: #444444;
 }
