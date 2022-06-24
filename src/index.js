@@ -107,7 +107,7 @@ function setUpsidedownTemp(response) {
 function getUpsidedown(city) {
     let city1 = city;
     let apiKey = `91d2874dec523f85475552340d0ebfb8`;
-    let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city1}&limit=1&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city1}&limit=1&appid=${apiKey}`;
     // api.openweathermap.org/geo/1.0/direct?q=brisbane&limit=1&appid=9fb8e037b1099cd883b83ce0d579fc0f
     // let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
     axios.get(`${apiUrl}`).then(getOtherCity);
