@@ -1,25 +1,3 @@
-/* TO DO: 
-fix open code link
-get rid of link ugly colour
-get ride of search click button ugly hover colour
-get rid of link underline
-unit conversion and styling
-get better 'water' icon
-move upsidedown icon
-make 'search for cities w/ an upsidedown' tooltip
-update copyright and socials
-check accessibility, colour blindness
-set attribute for alt text on icons in js:
-weatherIconElement.setAttribute(
-    "alt",
-    `${response.data.weather[0].description}`
-  );
-make image a vector
-Next time:
-  finish predictions
-  do write up
-*/
-
 body {
     height: 100%;
     background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%);
@@ -40,11 +18,6 @@ span #max {
     text-align: left;
 }
 
-/* img {
-    height: 80;
-    width: 113px;
-} */
-
 p{
  margin-bottom: 0px !important;
 }
@@ -63,8 +36,6 @@ a:hover {
         color: #000000;
         text-decoration: none;
 }
-
-
 
 #search-area {
     margin-bottom: 40px;
@@ -91,11 +62,6 @@ a:hover {
     max-width: 300px;
     padding: 20px;
 }
-
-/* #last-five-days {
-    font-size: 12px;
-    margin: 20px;
-} */
 
 #prediction {
  text-align: left;
@@ -206,5 +172,4 @@ a:hover {
     color: #444444;    
 }
 
-/* make the placeholder text white */
 ::-webkit-input-placeholder{ color: #737373; }
