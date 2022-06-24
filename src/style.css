@@ -78,6 +78,10 @@ a:hover {
     text-align: left;
 }
 
+.container {
+    max-width: 700px;
+}
+
 .box {
     display: inline-block !important;
 }
