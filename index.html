@@ -25,8 +25,8 @@
         <div class="row">
             <div class="headline1">
                 <p>ANTIPODE WEATHER SERVICE</p>
-                <p class="medium">Try entering 'Jakarta' in the city search box.</p>
-                <p class="medium">Also try: La Quiaca, Washer, or Christchurch.</p>
+                <p class="medium">Try entering 'Macao' in the city search box.</p>
+                <p class="medium">Also try: Madrid, Guayaquil, or Honolulu.</p>
             </div>
         </div>
         <div class="row" id="search-area">
@@ -87,43 +87,51 @@
                         </span>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col"></div>
-            <div class="col" id="lower">
-                <div class="box">
-                    <div class="row" id="weather-info">
-                        <!-- description goes here-->
-                            <div class="weather-row">
-                                <span id="day-time"></span>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col" id="lower">
+                        <div class="box">
+                            <div class="row" id="weather-info">
+                            <!-- description goes here-->
+                                <div class="weather-row">
+                                    <span id="day-time"></span>
+                                </div>
+                                <div class="weather-row">
+                                    <span>Humidity</span><span id="humidity"></span>.
+                                    <span>Windspeed</span><span id="wind"></span>.
+                                </div>
+                                <div class="weather-row">
+                                    <span id="description" style="text-transform: uppercase;">Weather description.</span>
+                                </div>
                             </div>
-                            <div class="weather-row">
-                                <span>Humidity</span><span id="humidity"></span>.
-                                <span>Windspeed</span><span id="wind"></span>.
-                            </div>
-                            <div class="weather-row">
-                                <span id="description" style="text-transform: uppercase;">Weather description.</span>
-                            </div>
+                        </div>
                     </div>
-                    <!-- DO NOT DO THIS PART YET
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="row" id="last-five-days">
-                        <div class="col-2 prediction">
-                            <div class="date">Day</div>
-                            <div class="icon">☼</div>
-                            <div id="min">Min</div>
-                            <div id="max">Max</div>
+                        <div class="col-8"></div>
+                        <div class="col-4">
+                            <div class="row">
+                            <div class="col-2 prediction">
+                                <div class="date">Day</div>
+                                <div class="mini-icon">☼</div>
+                                <div class="min-max">
+                                    <span class="min">10•</span><span class="max">10•</span>
+                                </div>
+                            <div>
+                        </div>
                         </div>
                     </div> 
-                -->
                 </div>
             </div>
         </div>
-        <div class="smaller">
+        <div class="row smaller">
             <p>Coded by <a href="https://www.linkedin.com/in/isabel-klint/">Isabel Klint.</a></p>
             <p><a href="https://isabelklint.github.io/ANTIPODE-WEATHER-SERVICE/">Open-sourced on GitHub</a> and <a href="https://sunny-fudge-a596ac.netlify.app">hosted on Netlify.</a></p>
         </div>
+        <script src="src/index.js"></script>
     </div>
-    <script src="src/index.js"></script>
 </body>
 </html>

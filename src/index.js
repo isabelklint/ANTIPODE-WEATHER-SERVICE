@@ -17,7 +17,8 @@ function getTime (now) {
     ];
 
     let dayName = dayNames[now.getDay()];
-    return `${dayName} ${hr}:${min}`;
+    return `${dayName} ${timeNow};
+    `;
 }
 
 let span = document.querySelector("#day-time");
@@ -85,7 +86,7 @@ function doClick(event) {
 
 let search = document.querySelector("#citysearchbutton");
 search.addEventListener("click", doClick);
-search.addEventListener("click", doUpsidedownClick);
+search.addEventListener("click", doUpsidedownClick)
 
 function setUpsidedownTemp(response) {
     let citycode = response.data.name;
@@ -114,15 +115,21 @@ function getUpsidedown(city) {
 }
 
 function getOtherCity (response) {
+    let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let latitude = response.data[0].lat;
     let longitude = response.data[0].lon;
     // let latitude = response.data.data[0].latitude;
     // let longitude = response.data.data[0].longitude;
     let upsidedownLatitude = Math.round(-latitude);
     let upsidedownLongitude = 180 - Math.round(Math.abs(longitude));
-    let apiKey = "af299e40c9c7667df5a6bc3d09004719";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(setUpsidedownTemp);
+    if (longitude < 0 ) {
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(setUpsidedownTemp);
+    } else if (longitude >= 0) {
+        let upsidedownLongitude = -(upsidedownLongitude);
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(setUpsidedownTemp);
+    }
 }
 
 function doUpsidedownClick(event) {

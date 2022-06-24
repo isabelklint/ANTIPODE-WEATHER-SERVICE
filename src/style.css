@@ -7,15 +7,19 @@ form {
     display: inline-block !important;
 }
 
-span #min { 
-    padding: 0px;
-    text-align: left;
+
+.date { 
+    opacity: 0.6;
 }
 
-span #max {
-    font-weight: bold;
-    padding: 5px;
+.min { 
     text-align: left;
+    opacity: 0.6;
+}
+
+.max {
+    font-weight: bold;
+    text-align: right;
 }
 
 p{
@@ -61,10 +65,7 @@ a:hover {
     color:white;
     max-width: 300px;
     padding: 20px;
-}
-
-#prediction {
- text-align: left;
+    border: 1px solid #777777;
 }
 
 #lower {
@@ -147,10 +148,6 @@ a:hover {
     font-size: 12px;
 }
 
-.min-max-temps {
-    padding: 5px;
-}
-
 .big {
     font-size: 36px;
     font-weight: bold;
@@ -177,3 +174,17 @@ a:hover {
 }
 
 ::-webkit-input-placeholder{ color: #cccccc; }
+
+
+.col-2.prediction {
+    font-size: 10px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    border: 1px solid #777777;
+    max-width: 50px;
+}
+
+#last-five-days {
+    border: 1px solid #777777;
+}
