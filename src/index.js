@@ -1,4 +1,3 @@
-// GET DAY AND TIME
 function getTime (now) {
     let hr = now.getHours();
     let min = now.getMinutes();
@@ -25,7 +24,6 @@ let span = document.querySelector("#day-time");
 let now = new Date();
 span.innerHTML = getTime(now);
 
-// GET CITY WEATHER
 function setTemp(response) {
     cvalue =  document.querySelector("#temp").innerHTML = Math.round(
         response.data.main.temp
@@ -49,7 +47,6 @@ function setTemp(response) {
     }
 }
 
-// GET CURRENT CITY
 function getCityFromLocation(position) {
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
@@ -73,8 +70,6 @@ function setWaves () {
 let locationButton = document.querySelector("#locationbutton");
 locationButton.addEventListener("click", getLocation);
 
-
-// GET RESULT CITY WEATHER
 function getCityFromSearch(city) {
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -92,8 +87,6 @@ let search = document.querySelector("#citysearchbutton");
 search.addEventListener("click", doClick);
 search.addEventListener("click", doUpsidedownClick);
 
-// GET THE UPSIDEDOWN
-// SET UPSIDEDOWN TEMP
 function setUpsidedownTemp(response) {
     let citycode = response.data.name;
     if (citycode != '') {
@@ -111,20 +104,10 @@ function setUpsidedownTemp(response) {
             setWaves();
         }
     }
-
-    // document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-    // document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-    // document.querySelector("#description").innerHTML =response.data.weather[0].main;
-    // console.log(response.data);
-
-// GET UPSIDEDOWN WEATHER
 function getUpsidedown(city) {
     let apiKey = `9fb8e037b1099cd883b83ce0d579fc0f`;
     let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
-    // http://api.positionstack.com/v1/forward?access_key=9fb8e037b1099cd883b83ce0d579fc0f&query=paris;
-    // if this results in a good apiRUL, then :
     axios.get(`${apiUrl}`).then(getOtherCity);
-    // otherwise, set waves.
 }
 
 function getOtherCity (response) {
@@ -158,8 +141,6 @@ function switchToCentigrade (event) {
     switchTemp.innerHTML = cvalue;
 }
 
-// UNIT CONVERSION
-
 let fdegree = document.querySelector("#fahrenheitLink");
 fdegree.addEventListener("click", switchToFahrenheit);
 
@@ -167,9 +148,6 @@ let cdegree = document.querySelector("#centigradeLink");
 cdegree.addEventListener('click', switchToCentigrade);
 
 let cvalue = null;
-
-
-// BIG ARRAYS BELOW FOR COUNTRYCODE --> COUNTRY AND PNG --> FA AWESOME
 
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81
 var isoCountries = {
@@ -444,7 +422,7 @@ var faIcons = {
     '04n' : '<i class="fa-solid fa-cloud-moon"></i>',
     '09n' : '<i class="fa-solid fa-cloud-moon-rain"></i>',
     '10n' : '<i class="fa-solid fa-cloud-moon-rain"></i>',
-    '11n' : '<i class="fa-solid fa-bolt"></i>',  /* thunderstorm */
+    '11n' : '<i class="fa-solid fa-bolt"></i>',
     '13n' : '<i class="fa-solid fa-snowflake"></i>',
     '50n' : '<i class="fa-solid fa-cloud-fog"></i>',
 };
