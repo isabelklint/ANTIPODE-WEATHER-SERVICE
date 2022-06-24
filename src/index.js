@@ -105,14 +105,19 @@ function setUpsidedownTemp(response) {
         }
     }
 function getUpsidedown(city) {
-    let apiKey = `9fb8e037b1099cd883b83ce0d579fc0f`;
-    let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
+    let city1 = city;
+    let apiKey = `91d2874dec523f85475552340d0ebfb8`;
+    let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city1}&limit=1&appid=${apiKey}`;
+    // api.openweathermap.org/geo/1.0/direct?q=brisbane&limit=1&appid=9fb8e037b1099cd883b83ce0d579fc0f
+    // let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
     axios.get(`${apiUrl}`).then(getOtherCity);
 }
 
 function getOtherCity (response) {
-    let latitude = response.data.data[0].latitude;
-    let longitude = response.data.data[0].longitude;
+    let latitude = response.data[0].lat;
+    let longitude = response.data[0].lon;
+    // let latitude = response.data.data[0].latitude;
+    // let longitude = response.data.data[0].longitude;
     let upsidedownLatitude = Math.round(-latitude);
     let upsidedownLongitude = 180 - Math.round(Math.abs(longitude));
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
