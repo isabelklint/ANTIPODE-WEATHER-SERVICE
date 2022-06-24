@@ -41,7 +41,12 @@ function setTemp(response) {
     let faIcon = getfaIcon(icon);
     document.querySelector("#icon").innerHTML =
       faIcon;
-    getUpsidedown(response.data.name);
+      let cityExists = response.data.name;
+    if (cityExists !="") {
+    getUpsidedown(cityExists);
+    } else {
+        alert("No antipode.")
+    }
 }
 
 // GET CURRENT CITY
@@ -56,14 +61,14 @@ function getCityFromLocation(position) {
 function getLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(getCityFromLocation);
-    //setWaves();
+    setWaves();
 }
 
-//function setWaves () {
-//    document.querySelector("#upsidedown-city-name").innerHTML = `<i class="fa-solid fa-water"></i>`;
-//    document.querySelector("#upsidedown-icon").innerHTML = "";
- //   document.querySelector("#searchbar").value = "";
-//}
+function setWaves () {
+    document.querySelector("#upsidedown-city-name").innerHTML = "NO ANTIPODE";
+    document.querySelector("#upsidedown-icon").innerHTML = `<i class="fa-solid fa-water"></i>`;
+    document.querySelector("#searchbar").value = "";
+}
 
 let locationButton = document.querySelector("#locationbutton");
 locationButton.addEventListener("click", getLocation);
@@ -74,7 +79,7 @@ function getCityFromSearch(city) {
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(`${apiUrl}`).then(setTemp);
-    //setWaves();
+    setWaves();
 }
 
 function doClick(event) {
@@ -96,16 +101,14 @@ function setUpsidedownTemp(response) {
         let countryName = getCountryName(countrycode);
         document.querySelector("#upsidedown-city-name").innerHTML = 
             `${response.data.name}, ${countryName}`;
-        let cuvalue =  document.querySelector("#upsidedown-temp").innerHTML = Math.round(response.data.main.temp);
-        document.querySelector("#upsidedown-temp").innerHTML = cuvalue;
+        document.querySelector("#upsidedown-temp").innerHTML = Math.round(response.data.main.temp);
         document.querySelector("#units").innerHTML="°C";
         let icon = response.data.weather[0].icon;
         let faIcon = getfaIcon(icon);
         document.querySelector("#upsidedown-icon").innerHTML =
           faIcon;
         } else {
-            document.querySelector("#utemp").innerHTML = Math.round(response.data.main.temp);
-            //setWaves();
+            setWaves();
         }
     }
 
@@ -119,14 +122,16 @@ function getUpsidedown(city) {
     let apiKey = `9fb8e037b1099cd883b83ce0d579fc0f`;
     let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
     // http://api.positionstack.com/v1/forward?access_key=9fb8e037b1099cd883b83ce0d579fc0f&query=paris;
+    // if this results in a good apiRUL, then :
     axios.get(`${apiUrl}`).then(getOtherCity);
+    // otherwise, set waves.
 }
 
 function getOtherCity (response) {
     let latitude = response.data.data[0].latitude;
     let longitude = response.data.data[0].longitude;
     let upsidedownLatitude = Math.round(-latitude);
-    let upsidedownLongitude = Math.round(180-longitude);
+    let upsidedownLongitude = 180 - Math.round(Math.abs(longitude));
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(setUpsidedownTemp);
@@ -138,24 +143,19 @@ function doUpsidedownClick(event) {
     getUpsidedown(city);
 }
 
+
 function switchToFahrenheit (event) {
     event.preventDefault();
     let switchTemp = document.querySelector("#temp");
     let ftemp = (cvalue * 9/5) + 32;
     switchTemp.innerHTML = Math.round(ftemp);
     let switchUTemp = document.querySelector("#upsidedown-temp");
-    let futemp = (cuvalue * 9/5) + 32;
-    switchUTemp.innerHTML = Math.round(futemp);
-    document.querySelector("#units").innerHTML="°F";
 }
 
 function switchToCentigrade (event) {
     event.preventDefault();
     let switchTemp = document.querySelector("#temp");
     switchTemp.innerHTML = cvalue;
-    let switchUTemp = document.querySelector("#temp");
-    switchUTemp.innerHTML = cuvalue;
-    document.querySelector("#units").innerHTML="°C";
 }
 
 // UNIT CONVERSION
@@ -167,8 +167,6 @@ let cdegree = document.querySelector("#centigradeLink");
 cdegree.addEventListener('click', switchToCentigrade);
 
 let cvalue = null;
-let cuvalue = null;
-// let city = "Jakarta"; //fix this!!
 
 
 // BIG ARRAYS BELOW FOR COUNTRYCODE --> COUNTRY AND PNG --> FA AWESOME
