@@ -106,7 +106,7 @@ function setUpsidedownTemp(response) {
     }
 function getUpsidedown(city) {
     let apiKey = `9fb8e037b1099cd883b83ce0d579fc0f`;
-    let apiUrl = `https://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
+    let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
     axios.get(`${apiUrl}`).then(getOtherCity);
 }
 
