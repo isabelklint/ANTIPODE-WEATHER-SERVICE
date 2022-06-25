@@ -17,8 +17,7 @@ function getTime (now) {
     ];
 
     let dayName = dayNames[now.getDay()];
-    return `${dayName} ${timeNow};
-    `;
+    return `${dayName} ${timeNow}`;
 }
 
 let span = document.querySelector("#day-time");
@@ -31,11 +30,11 @@ function setTemp(response) {
       );
     document.querySelector("#city-name").innerHTML = response.data.name;
     document.querySelector("#temp").innerHTML = cvalue;
-    document.querySelector("#humidity").innerHTML = ` ` + response.data.main.humidity+`%`;
-    document.querySelector("#wind").innerHTML = ` ` + Math.round(
+    document.querySelector("#humidity").innerHTML = `Humidity ` + response.data.main.humidity+`%`;
+    document.querySelector("#wind").innerHTML = `Windspeed ` + Math.round(
       response.data.wind.speed
     )+`km/h`;
-    document.querySelector("#description").innerHTML = response.data.weather[0].description + `.`;
+    document.querySelector("#description").innerHTML = response.data.weather[0].description;
     let icon = response.data.weather[0].icon;
     let faIcon = getfaIcon(icon);
     document.querySelector("#icon").innerHTML =
