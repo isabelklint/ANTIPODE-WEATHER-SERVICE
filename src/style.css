@@ -87,6 +87,10 @@ a:hover {
     display: inline-block !important;
 }
 
+.insidebox {
+    width: 176px;
+}
+
 .col {
     color: white;
 }
@@ -110,7 +114,7 @@ a:hover {
 form {
     background-color: transparent;
     font-size: 12px;
-    width: 210px;
+    width: 200px;
     font-weight:lighter;
     border-top: none;
     border-left: none;
@@ -120,7 +124,6 @@ form {
     line-height: 18px;
     color: #cccccc;
     float: left;
-    border: 4px solid red;
 
 }
 
