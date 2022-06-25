@@ -83,51 +83,33 @@
                         <h2 class="big">
                             <span id="temp"></span>
                             <span id="c">
-                                <a href="#" id="centigradeLink">°C</a></span>
+                                <a href="#"  class="active" id="centigradeLink">°C</a></span>
                                 <span id="bar"> | </span>
-                            <span id="f"><a href="#" id="fahrenheitLink">°F</a></span>
+                            <span id="f"><a href="#" class="notActive" id="fahrenheitLink">°F</a></span>
                             </span>
                         </h2>
-                    </div>
-                    <div class="icon-area">
                         <span id="icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
                         </span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col" id="lower">
-                        <div class="box">
-                            <div class="row" id="weather-info">
-                            <!-- description goes here-->
-                                <div class="weather-row">
-                                    <span id="day-time"></span>
-                                </div>
-                                <div class="weather-row">
-                                    <span></span><span id="humidity"></span>
-                                    <span></span><span id="wind"></span>
-                                </div>
-                                <div class="weather-row">
-                                    <span id="description" style="text-transform: capitalize;"></span>
+                <div class="prediction-description-area">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                                <div class="row" class="weather-row">
+                                <div>
+                                    <p id="day-time"></p>
+                                    <p id="description" style="text-transform: capitalize;"></p>
+                                    <p id="humidity"></p>
+                                    <p id="wind"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row" id="last-five-days">
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-8"></div>
-                        <div class="col-4" >
-                            <div class="row" id="last-five-days">
-                            <!-- weather predictions go here-->
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
         <div class="row smaller">
             <p>Coded by <a href="https://www.linkedin.com/in/isabel-klint/">Isabel Klint.</a></p>
             <p><a href="https://isabelklint.github.io/ANTIPODE-WEATHER-SERVICE/">Open-sourced on GitHub</a> and <a href="https://sunny-fudge-a596ac.netlify.app">hosted on Netlify.</a></p>

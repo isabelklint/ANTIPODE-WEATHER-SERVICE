@@ -106,6 +106,7 @@ function setUpsidedownTemp(response) {
             setWaves();
         }
     }
+
 function getUpsidedown(city) {
     let city1 = city;
     let apiKey = `91d2874dec523f85475552340d0ebfb8`;
@@ -139,6 +140,8 @@ function doUpsidedownClick(event) {
 
 function switchToFahrenheit (event) {
     event.preventDefault();
+    centigradeLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
     let switchTemp = document.querySelector("#temp");
     let ftemp = (cvalue * 9/5) + 32;
     switchTemp.innerHTML = Math.round(ftemp);
@@ -146,6 +149,8 @@ function switchToFahrenheit (event) {
 
 function switchToCentigrade (event) {
     event.preventDefault();
+    fahrenheitLink.classList.remove("active");
+    centigradeLink.classList.add("active");
     let switchTemp = document.querySelector("#temp");
     switchTemp.innerHTML = cvalue;
 }
@@ -160,11 +165,12 @@ let cvalue = null;
 
 // forecast
 function lastFiveDays () {
-    let thisFive = document.querySelector("#last-five-days");
+    let lastFiveColumn = document.querySelector("#last-five-days");
 
-    let thisFiveHTML = "";
-    thisFive.innerHTML = thisFiveHTML;
-        thisFiveHTML = thisFiveHTML + `
+    let lastFiveColumnHTML = `<div class="row">`;
+    let days = [`Sunday`, `Monday`]
+    lastFiveColumn.innerHTML = 
+    lastFiveColumnHTML + `
 
         <div class="col-2 prediction">
         <div class="date">Day</div>
@@ -174,8 +180,10 @@ function lastFiveDays () {
         <span class="max">10•</span>
         </div>
         </div>`;
-}
 
+    lastFiveColumnHTML  = lastFiveColumnHTML  + `</div>`;
+    lastFiveColumn.innerHTML = lastFiveColumnHTML;
+}
 
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81
 var isoCountries = {
