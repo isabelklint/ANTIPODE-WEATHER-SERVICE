@@ -1,46 +1,47 @@
-body {height: 100%;background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%)}
+body {height: 100%;background: linear-gradient(90deg, #e74c3c 50%, #2c3e50 50%)}
 img {height: 100px;width: 140px}
 p {margin-bottom: 0px !important}
 form {background-color: transparent;font-size: 12px;width: 200px;
     font-weight: lighter;border-top: none;
     border-left: none;border-right: none;
     margin-right: 0px;margin-bottom: 3px;
-    line-height: 18px;color: #cccccc;float: left}
-button {background-color: #DF96A0;border-top: none;
-    border-left: none;border-right: 2px solid #5C5C5C;
-    border-bottom: 2px solid #5C5C5C;color: #DF96A0;
+    line-height: 18px;color: #white;float: left}
+button {background-color: #e74c3c;border-top: none;
+    border-left: none;border-right: 2px solid #2c3e50;
+    border-bottom: 2px solid #2c3e50;color: #e74c3c;
     font-size: small;width: 24px;margin: 0 auto;line-height: 18px;
     float: right}
 input {border-top: none;border-left: none;border-right: none;
-    border-bottom: 2px solid #5C5C5C;
-    background-color: #BF6F7A;color: white}
+    border-bottom: 2px solid #2c3e50;
+    background-color: #c0392b;color: white}
 input.locationbar {background-color: transparent}
 input:focus {outline: none}
-a:link {color: #444444;text-decoration: none}
-a:visited {color: #444444;text-decoration: none}
-a:hover {color: #2C2C2C;text-decoration: none}
+a:link {color: #7f8c8d;text-decoration: none}
+a:visited {color: #2c3e50;text-decoration: none}
+a:hover {color: white;text-decoration: none}
 a.active {color: white;cursor: default}
 #search-area {margin-bottom: 30px;margin-left: 125px}
-#left {transform: scale(-1,-1);max-width: 300px;color: #444444;}
+#left {transform: scale(-1,-1);max-width: 300px;color: #2c3e50;}
 #middle {padding: 10px;margin: 0 auto;max-width: 160px;}
 #right {color: white;max-width: 300px;}
 #name-temp {text-align: left}
-#bar {font-size: 36px;color: #444444}
+#bar {font-size: 36px;color: #7f8c8d}
 .date {opacity: 0.6}
 .min {text-align: left;opacity: 0.6}
 .max {font-weight: bold;text-align: right}
 .container {max-width: 700px}
 .box {display: inline-block !important;margin-left: 15px;margin-top: 0}
 .insidebox {width: 176px}
+.col {color: white}
 .headline1 {display: block;text-align: left;padding-top: 20px;
-    color: #444444;font-size: 20px;font-family: "Jaldi", sans-serif}
+    color: #2c3e50;font-size: 20px;font-family: "Jaldi", sans-serif}
 .headline2 {font-family: "Jaldi", sans-serif;
     display: block;color: white;font-size: 20px}
-.button:hover {border: 1px solid #5C5C5C}
+.button:hover {border: 1px solid #2c3e50}
 .prediction-description-area {text-align: right;font-size: 12px}
 .big {font-size: 36px;font-weight: bold}
 .big-icon {font-size: 56px}
-.smaller {font-size: 14px;color: #444444;padding-bottom: 10px}
-.medium {font-size: 16px;color: #444444}
+.smaller {font-size: 14px;color: #2c3e50;padding-bottom: 10px}
+.medium {font-size: 16px;color: #2c3e50}
 .col-2.prediction {font-size: 10px;margin: 0 auto;padding: 0;
-    text-align: center;border: 1px solid #777777;max-width: 50px}
+    text-align: center;border: 1px solid #7f8c8d;max-width: 50px}
