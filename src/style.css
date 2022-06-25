@@ -54,6 +54,7 @@ a:hover {
     transform: scale(-1,-1);
     max-width: 300px;
     color: #444444;
+        /*border: 1px solid #777777;*/
 }
 
 #middle {
@@ -61,14 +62,14 @@ a:hover {
     margin: 0 auto;
     text-align: center;
     max-width: 160px;
-    border: 1px solid #777777;
+    /*border: 1px solid #777777;*/
 }
 
 #right {
     text-align: right;
     color:white;
     max-width: 300px;
-    border: 1px solid #777777;
+    /*border: 1px solid #777777;*/
 }
 
 #lower {
@@ -187,6 +188,7 @@ a:hover {
     border: 1px solid #777777;
     max-width: 50px;
 }
+
 
 #last-five-days {
     border: 1px solid #777777;
