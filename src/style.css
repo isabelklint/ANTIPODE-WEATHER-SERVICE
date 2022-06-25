@@ -2,7 +2,6 @@ body {
     height: 100%;
     background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%);
 } 
-        /* background-color: transparent; */
 
 img {
     height: 100px;
@@ -23,7 +22,7 @@ img {
     text-align: right;
 }
 
-p{
+p {
  margin-bottom: 0px !important;
 }
 
@@ -138,21 +137,6 @@ button {
     margin: 0 auto;
     line-height: 18px;
   }
-/*
-.button {
-    background-color: #DF96A0;
-    float: left;
-    border-top: none;
-    border-left: none;
-    border-right: 2px solid #5C5C5C;
-    border-bottom: 2px solid #5C5C5C;
-    color: #DF96A0;
-    font-size: small;
-    width: 24px;
-    margin: 0 auto;
-    line-height: 18px;
-
-} */
 
 .button:hover {
     border: 1px solid #5C5C5C;
@@ -217,6 +201,6 @@ input {
     border-right: none;
     border-bottom: 1px solid #5C5C5C;
     background-color: #BF6F7A;
+    color: #DBDBDB; 
+    opacity: 1;
 }
-
-::-webkit-input-placeholder{ color: #cccccc; }

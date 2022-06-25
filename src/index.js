@@ -65,6 +65,7 @@ function getLocation(event) {
 function setWaves () {
     document.querySelector("#upsidedown-city-name").innerHTML = "NO ANTIPODE";
     document.querySelector("#upsidedown-icon").innerHTML = `<i class="fa-solid fa-water"></i>`;
+    document.querySelector("#searchbar").value = "";
 }
 
 let locationButton = document.querySelector("#locationbutton");
