@@ -161,15 +161,17 @@ let cvalue = null;
 // forecast
 function lastFiveDays () {
     let thisFive = document.querySelector("#last-five-days");
-    thisFive.innerHTML = `
-        <div class="row">
+
+    let thisFiveHTML = "";
+    thisFive.innerHTML = thisFiveHTML;
+        thisFiveHTML = thisFiveHTML + `
+
         <div class="col-2 prediction">
         <div class="date">Day</div>
         <div class="mini-icon">☼</div>
         <div class="min-max">
         <span class="min">10•</span>
         <span class="max">10•</span>
-        </div>
         </div>
         </div>`;
 }
