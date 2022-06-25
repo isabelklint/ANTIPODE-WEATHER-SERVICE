@@ -2,10 +2,7 @@ body {
     height: 100%;
     background: linear-gradient(90deg, #BF6F7A 50%, #5C5C5C 50%);
 } 
-
-form {
-    display: inline-block !important;
-}
+        /* background-color: transparent; */
 
 img {
     height: 100px;
@@ -48,13 +45,14 @@ a:hover {
 #search-area {
     margin-bottom: 40px;
     margin-left: 125px;
+    /* background-color: transparent; */
 }
 
 #left {
     transform: scale(-1,-1);
     max-width: 300px;
     color: #444444;
-        /*border: 1px solid #777777;*/
+    /* border: 1px solid #777777; */
 }
 
 #middle {
@@ -62,14 +60,14 @@ a:hover {
     margin: 0 auto;
     text-align: center;
     max-width: 160px;
-    /*border: 1px solid #777777;*/
+    /* border: 1px solid #777777; */
 }
 
 #right {
     text-align: right;
     color:white;
     max-width: 300px;
-    /*border: 1px solid #777777;*/
+    /* border: 1px solid #777777; */
 }
 
 #lower {
@@ -110,23 +108,37 @@ a:hover {
     font-size: 22px;
 }
 
-.form {
-    background-color: #A9626C;/*#BF6F7A;*/
+form {
+    display: inline-block;
+    background-color: transparent;
     border-bottom: 2px solid #5C5C5C;
     font-size: 12px;
     font-weight:lighter;
-    color: white;
     border-top: none;
     border-left: none;
     border-right: none;
-    float: left;
     padding-left: 6px;
     margin-right: 0px;
     margin-bottom: 2px;
-    width: 180px;
+    width: 140px;
     line-height: 18px;
+    color: #cccccc;
 }
 
+button {
+    background-color: #DF96A0;
+    display: inline;
+    border-top: none;
+    border-left: none;
+    border-right: 2px solid #5C5C5C;
+    border-bottom: 2px solid #5C5C5C;
+    color: #DF96A0;
+    font-size: small;
+    width: 24px;
+    margin: 0 auto;
+    line-height: 18px;
+  }
+/*
 .button {
     background-color: #DF96A0;
     float: left;
@@ -140,7 +152,7 @@ a:hover {
     margin: 0 auto;
     line-height: 18px;
 
-}
+} */
 
 .button:hover {
     border: 1px solid #5C5C5C;
@@ -177,9 +189,6 @@ a:hover {
     color: #444444;    
 }
 
-::-webkit-input-placeholder{ color: #cccccc; }
-
-
 .col-2.prediction {
     font-size: 10px;
     margin: 0 auto;
@@ -189,7 +198,25 @@ a:hover {
     max-width: 50px;
 }
 
-
 #last-five-days {
     border: 1px solid #777777;
 }
+
+.locationbar {
+    background-color: transparent;
+
+}
+
+input:focus {
+    outline: none;
+  }
+
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #5C5C5C;
+    background-color: #BF6F7A;
+}
+
+::-webkit-input-placeholder{ color: #cccccc; }

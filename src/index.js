@@ -65,7 +65,6 @@ function getLocation(event) {
 function setWaves () {
     document.querySelector("#upsidedown-city-name").innerHTML = "NO ANTIPODE";
     document.querySelector("#upsidedown-icon").innerHTML = `<i class="fa-solid fa-water"></i>`;
-    document.querySelector("#searchbar").value = "";
 }
 
 let locationButton = document.querySelector("#locationbutton");
@@ -78,15 +77,16 @@ function getCityFromSearch(city) {
     setWaves();
 }
 
-function doClick(event) {
+function doSubmit(event) {
     event.preventDefault();
     let city = document.querySelector("#searchbar").value;
     getCityFromSearch(city);
+    console.log(city);
 }
 
-let search = document.querySelector("#citysearchbutton");
-search.addEventListener("click", doClick);
-search.addEventListener("click", doUpsidedownClick)
+let form = document.querySelector("form");
+form.addEventListener("submit", doSubmit);
+form.addEventListener("submit", doUpsidedownClick);
 
 function setUpsidedownTemp(response) {
     let citycode = response.data.name;
@@ -109,8 +109,6 @@ function getUpsidedown(city) {
     let city1 = city;
     let apiKey = `91d2874dec523f85475552340d0ebfb8`;
     let apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city1}&limit=1&appid=${apiKey}`;
-    // api.openweathermap.org/geo/1.0/direct?q=brisbane&limit=1&appid=9fb8e037b1099cd883b83ce0d579fc0f
-    // let apiUrl = `http://api.positionstack.com/v1/forward?access_key=${apiKey}&query=${city}`;
     axios.get(`${apiUrl}`).then(getOtherCity);
 }
 
@@ -118,15 +116,14 @@ function getOtherCity (response) {
     let apiKey = "af299e40c9c7667df5a6bc3d09004719";
     let latitude = response.data[0].lat;
     let longitude = response.data[0].lon;
-    // let latitude = response.data.data[0].latitude;
-    // let longitude = response.data.data[0].longitude;
     let upsidedownLatitude = Math.round(-latitude);
-    let upsidedownLongitude = 180 - Math.round(Math.abs(longitude));
     if (longitude < 0 ) {
+        let upsidedownLongitude = 180 - Math.round(Math.abs(longitude));
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(setUpsidedownTemp);
     } else if (longitude >= 0) {
-        let upsidedownLongitude = -(upsidedownLongitude);
+        let upsidedownL = 180 - Math.round(Math.abs(longitude));
+        let upsidedownLongitude = -(upsidedownL);
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${upsidedownLatitude}&lon=${upsidedownLongitude}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(setUpsidedownTemp);
     }
@@ -144,7 +141,6 @@ function switchToFahrenheit (event) {
     let switchTemp = document.querySelector("#temp");
     let ftemp = (cvalue * 9/5) + 32;
     switchTemp.innerHTML = Math.round(ftemp);
-    let switchUTemp = document.querySelector("#upsidedown-temp");
 }
 
 function switchToCentigrade (event) {
