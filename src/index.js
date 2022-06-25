@@ -87,6 +87,7 @@ function doSubmit(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", doSubmit);
+form.addEventListener("submit", lastFiveDays);
 form.addEventListener("submit", doUpsidedownClick);
 
 function setUpsidedownTemp(response) {
@@ -157,6 +158,23 @@ let cdegree = document.querySelector("#centigradeLink");
 cdegree.addEventListener('click', switchToCentigrade);
 
 let cvalue = null;
+
+// forecast
+function lastFiveDays () {
+    let thisFive = document.querySelector("#last-five-days");
+    thisFive.innerHTML = `
+        <div class="row">
+        <div class="col-2 prediction">
+        <div class="date">Day</div>
+        <div class="mini-icon">☼</div>
+        <div class="min-max">
+        <span class="min">10•</span>
+        <span class="max">10•</span>
+        </div>
+        </div>
+        </div>`;
+}
+
 
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81
 var isoCountries = {

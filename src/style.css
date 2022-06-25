@@ -115,7 +115,7 @@ form {
     border-left: none;
     border-right: none;
     margin-right: 0px;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
     line-height: 18px;
     color: #cccccc;
     float: left;
@@ -177,10 +177,6 @@ button {
     text-align: center;
     border: 1px solid #777777;
     max-width: 50px;
-}
-
-#last-five-days {
-    border: 1px solid #777777;
 }
 
 input {
