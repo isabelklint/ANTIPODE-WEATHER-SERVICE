@@ -7,6 +7,10 @@ form {
     display: inline-block !important;
 }
 
+img {
+    height: 100px;
+    width: 140px;
+}
 
 .date { 
     opacity: 0.6;
@@ -64,7 +68,6 @@ a:hover {
     text-align: right;
     color:white;
     max-width: 300px;
-    padding: 20px;
     border: 1px solid #777777;
 }
 
