@@ -44,7 +44,8 @@ a:hover {
 #search-area {
     margin-bottom: 40px;
     margin-left: 125px;
-    /* background-color: transparent; */
+    border: 1px solid #777777;
+
 }
 
 #left {
@@ -108,25 +109,21 @@ a:hover {
 }
 
 form {
-    display: inline-block;
     background-color: transparent;
-    border-bottom: 2px solid #5C5C5C;
     font-size: 12px;
     font-weight:lighter;
     border-top: none;
     border-left: none;
     border-right: none;
-    padding-left: 6px;
     margin-right: 0px;
     margin-bottom: 2px;
-    width: 140px;
     line-height: 18px;
     color: #cccccc;
+    float: left;
 }
 
 button {
     background-color: #DF96A0;
-    display: inline;
     border-top: none;
     border-left: none;
     border-right: 2px solid #5C5C5C;
@@ -136,6 +133,7 @@ button {
     width: 24px;
     margin: 0 auto;
     line-height: 18px;
+    float: right;
   }
 
 .button:hover {
@@ -199,8 +197,7 @@ input {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid #5C5C5C;
+    border-bottom: 2px solid #5C5C5C;
     background-color: #BF6F7A;
-    color: #DBDBDB; 
-    opacity: 1;
+    color: white; 
 }
