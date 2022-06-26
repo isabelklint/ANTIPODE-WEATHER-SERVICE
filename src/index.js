@@ -168,7 +168,7 @@ function lastFiveDays () {
     let lastFiveColumn = document.querySelector("#last-five-days");
 
     let lastFiveColumnHTML = `<div class="row">`;
-    let days = [`Sunday`, `Monday`]
+    let days = [`Sun`, `Mon`, `Tue`]
     lastFiveColumn.innerHTML = 
     lastFiveColumnHTML + `
 
