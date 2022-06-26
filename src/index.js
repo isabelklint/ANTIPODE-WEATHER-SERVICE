@@ -167,24 +167,26 @@ let cvalue = null;
 function lastFiveDays () {
     let lastFiveColumn = document.querySelector("#last-five-days");
 
-    let lastFiveColumnHTML = `<div class="row">`;
     let days = [`Sun`, `Mon`, `Tue`]
-    lastFiveColumn.innerHTML = 
-    lastFiveColumnHTML + `
+    let lastFiveColumnHTML = `<div class="row">`;
 
-        <div class="col-2 prediction">
-        <div class="date">Day</div>
-        <div class="mini-icon">☼</div>
-        <div class="min-max">
-        <span class="min">10•</span>
-        <span class="max">10•</span>
-        </div>
-        </div>`;
+    days.forEach(function(day){
+        lastFiveColumn.innerHTML = 
+        lastFiveColumnHTML + `
 
-    lastFiveColumnHTML  = lastFiveColumnHTML  + `</div>`;
-    lastFiveColumn.innerHTML = lastFiveColumnHTML;
+            <div class="col-2 prediction">
+            <div class="date">Day</div>
+            <div class="mini-icon">☼</div>
+            <div class="min-max">
+            <span class="min">10•</span>
+            <span class="max">10•</span>
+            </div>
+            </div>`;});
+
+        lastFiveColumnHTML  = lastFiveColumnHTML  + `</div>`;
+        lastFiveColumn.innerHTML = lastFiveColumnHTML;
+        console.log(lastFiveColumnHTML);
 }
-
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81
 var isoCountries = {
     'AF' : 'Afghanistan',
