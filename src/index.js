@@ -45,6 +45,7 @@ function setTemp(response) {
     } else {
         alert("No antipode.")
     }
+    lastFiveDays(); // PUT TABLE HERE?
 }
 
 function getCityFromLocation(position) {
@@ -163,7 +164,7 @@ cdegree.addEventListener('click', switchToCentigrade);
 
 let cvalue = null;
 
-// forecast
+// PREDICTION AREA
 function lastFiveDays () {
     let lastFiveColumn = document.querySelector("#last-five-days");
 
@@ -187,6 +188,7 @@ function lastFiveDays () {
         lastFiveColumn.innerHTML = lastFiveColumnHTML;
         console.log(lastFiveColumnHTML);
 }
+
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81
 var isoCountries = {
     'AF' : 'Afghanistan',
