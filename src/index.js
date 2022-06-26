@@ -165,21 +165,30 @@ cdegree.addEventListener('click', switchToCentigrade);
 let cvalue = null;
 
 // PREDICTION AREA
+
+function formatDay(timestamp){
+    let date = new Date(timestamp + 1000);
+    let day = date.getDay();
+    let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    return days[day];
+}
+
 function lastFiveDays(response) {
     let days = response.data.daily;
     let lastFiveColumns = document.querySelector("#last-five-days");
     let lastFiveColumnsHTML = `<div class="row">`;
+
     days.forEach(function (day, index) {
-        if (index < 5) {
+        let icon = day.weather[0].icon;
+        let faIcon = getfaIcon(icon);
+        if (index < 4) {
             lastFiveColumnsHTML = 
             lastFiveColumnsHTML + `
                 <div class="col prediction">
-                    <div class="date">${day}</div>
-                    <div class="mini-icon"></div>
-                    <div class="min-max">
-                    <span class="min"></span>
-                    <span class="max"></span>
-                    </div>
+                    <p class="date">${formatDay(day.dt)}</p>
+                    <p class="mini-icon">${faIcon}</p>
+                    <p class="min">${Math.round(day.temp.min)}°</p>
+                    <p class="max">${Math.round(day.temp.max)}°</p>
                 </div>`;
         }
     });
