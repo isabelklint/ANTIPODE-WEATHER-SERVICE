@@ -3,7 +3,7 @@ body {height: 100%;background: linear-gradient(90deg, #E74C3C 50%, #2C3E50 50%);
 img {height: 100px;width: 140px}
 p {margin-bottom: 0px !important}
 form {background-color: #2C3E50;font-size: 12px;
-    width: 201px;border-top: none; padding-left: 1px;
+    width: 201px;border-top: none; padding-left: 3px;
     border-left: none;border-right: none;
     margin-right: 0px;margin-bottom: 3px;
     line-height: 18px;float: left}
