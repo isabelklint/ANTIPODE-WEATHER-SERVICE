@@ -9,12 +9,12 @@ form {background-color: #2C3E50;font-size: 12px;
     line-height: 18px;float: left}
 button {background-color: #E74C3C;border-top: none;
     border-left: none;border-right: 2px solid #2C3E50;
-    border-bottom: 1px solid #2C3E50;color: #E74C3C;
+    border-bottom: 8px solid #2C3E50;color: #E74C3C;
     font-size: small;width: 24px;margin: 0 auto;line-height: 18px;
     float: right}
-input {border-top: none;border-left: none;border-right: none;
+input {border-top: none;border-left: 1px solid #2C3E50;border-right: none;
     padding-left: 5px;
-    border-bottom: 3px solid #2C3E50;
+    border-bottom: 8px solid #2C3E50;
     background-color: #C0392C;color: white}
 input.locationbar {background-color: #C0392C}
 input:focus {outline: none}
@@ -39,7 +39,7 @@ a.active {color: #dff9fb;cursor: default}
 .headline2 {font-family: "Jaldi", sans-serif;
     display: block;color: #dff9fb;font-size: 20px}
 .button:hover {border-top: 2px 
-    solid #2C3E50; border-bottom: 0;
+    solid #2C3E50; border-bottom: none;
     border-right:0; border-left: 3px solid #2C3E50}
 .prediction-description-area {text-align: right;font-size: 12px; margin: 0 auto; padding:0}
 #last-five-days {font-size: 12px;text-align: center;  
