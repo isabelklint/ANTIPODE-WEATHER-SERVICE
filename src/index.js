@@ -45,7 +45,7 @@ function setTemp(response) {
     } else {
         alert("No antipode.")
     }
-    lastFiveDays(); // PUT TABLE HERE?
+    getLastFive(response.data.coord);
 }
 
 function getCityFromLocation(position) {
@@ -165,28 +165,33 @@ cdegree.addEventListener('click', switchToCentigrade);
 let cvalue = null;
 
 // PREDICTION AREA
-function lastFiveDays () {
-    let lastFiveColumn = document.querySelector("#last-five-days");
+function lastFiveDays(response) {
+    let days = response.data.daily;
+    let lastFiveColumns = document.querySelector("#last-five-days");
+    let lastFiveColumnsHTML = `<div class="row">`;
+    days.forEach(function (day, index) {
+        if (index < 5) {
+            lastFiveColumnsHTML = 
+            lastFiveColumnsHTML + `
+                <div class="col prediction">
+                    <div class="date">${day}</div>
+                    <div class="mini-icon"></div>
+                    <div class="min-max">
+                    <span class="min"></span>
+                    <span class="max"></span>
+                    </div>
+                </div>`;
+        }
+    });
+    lastFiveColumnsHTML  = lastFiveColumnsHTML  + `</div>`;
+    lastFiveColumns.innerHTML = lastFiveColumnsHTML;
+    console.log(lastFiveColumnsHTML);
+}
 
-    let days = [`Sun`, `Mon`, `Tue`]
-    let lastFiveColumnHTML = `<div class="row">`;
-
-    days.forEach(function(day){
-        lastFiveColumn.innerHTML = 
-        lastFiveColumnHTML + `
-
-            <div class="col-2 prediction">
-            <div class="date">Day</div>
-            <div class="mini-icon">☼</div>
-            <div class="min-max">
-            <span class="min">10•</span>
-            <span class="max">10•</span>
-            </div>
-            </div>`;});
-
-        lastFiveColumnHTML  = lastFiveColumnHTML  + `</div>`;
-        lastFiveColumn.innerHTML = lastFiveColumnHTML;
-        console.log(lastFiveColumnHTML);
+function getLastFive(coordinates) {
+    let apiKey = `af299e40c9c7667df5a6bc3d09004719`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(lastFiveDays);
 }
 
 //https://gist.github.com/themeteorchef/dcffd74ca3ab45277c81

@@ -75,7 +75,7 @@
                     alt="icon shows cities are antipodes"/>
                 </span>
             </div>
-            <div class="col text-center" id="right">
+            <div class="col" id="right">
                 <div class="row" id="result-area">
                     <div class="row" id="name-temp">
                         <!-- city name, temp, and weather icon -->
@@ -88,28 +88,28 @@
                             <span id="f"><a href="#" id="fahrenheitLink">°F</a></span>
                             </span>
                         </h2>
-                        <span id="icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
-                        </span>
                     </div>
                 </div>
-                <div class="prediction-description-area">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                                <div class="row" class="weather-row">
-                                <div>
-                                    <p id="day-time"></p>
-                                    <p id="description" style="text-transform: capitalize;"></p>
-                                    <p id="humidity"></p>
-                                    <p id="wind"></p>
-                                </div>
+                <div class="row prediction-description-area">
+                    <div class="col"><span id="icon" class="big-icon"><i class="fa-solid fa-rainbow"></i>
+                    </span></div>
+                    <div class="col">
+                        <div class="row weather-row">
+                            <div>
+                                <p id="day-time"></p>
+                                <p id="description" style="text-transform: capitalize;"></p>
+                                <p id="humidity"></p>
+                                <p id="wind"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="last-five-days">
-                    </div>
                 </div>
             </div>
+            <div class="col-6"></div>
+            <div class="col-6">
+            <div class="row" id="last-five-days"></div>
+            </div>
+        </div>
         <div class="row smaller">
             <p>Coded by <a href="https://www.linkedin.com/in/isabel-klint/">Isabel Klint.</a></p>
             <p><a href="https://isabelklint.github.io/ANTIPODE-WEATHER-SERVICE/">Open-sourced on GitHub</a> and <a href="https://sunny-fudge-a596ac.netlify.app">hosted on Netlify.</a></p>
