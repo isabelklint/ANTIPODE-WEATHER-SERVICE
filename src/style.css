@@ -1,4 +1,4 @@
-body {font-size: 12px; height: 100%;background: #2C3E50;font-weight: normal}
+body {font-size: 12px; height: 100%;background: #E74C3C;font-weight: normal}
 img {height: 64px;width: 90px; padding: 0; margin: 0 auto}
 p {margin-bottom: 0 !important}
 form {background-color: #2C3E50;width: 180px;border:none;line-height: 18px;float: left}
@@ -10,18 +10,18 @@ h2 a.active {color: #dff9fb;cursor: default}
 a:link {color: #95afc0;text-decoration: none}
 a:visited {color: #95afc0;text-decoration: none}
 a:hover {color: #dff9fb;text-decoration: none}
-p a:link {color: #dff9fb;text-decoration: none}
-p a:visited {color: hsl(184, 78%, 93%);text-decoration: none}
+p a:link {color: #2C3E50;text-decoration: none}
+p a:visited {color: #2C3E50;text-decoration: none}
 p a:hover {color: #dff9fb;text-decoration: none}
 .align-items-center {padding: 0}
 #search-area {margin-bottom: 30px;margin-left: 80px}
 #left {width:188px;transform: scale(-1,-1);color: #2C3E50}
 #middle {width:96px;padding: 0; margin: 0 auto; display: block;text-align: center}
-#right {width: 188px;color: #dff9fb; padding: 0; margin: 0 auto}
+#right {width: 188px;color: #dff9fb; padding: 10px; margin: 0 auto}
 #name-temp {text-align: left}
 #bar {font-size: 36px;color: #95afc0}
 #last-five-days {padding-left: 10px; color: white;
-    font-size: 10px;text-align: center;margin-top: 10px}
+    font-size: 10px;text-align: center;margin-top: 10px; padding:10px}
 .locationbar {background-color: #C0392C}
 .container {background: linear-gradient(90deg, #E74C3C 50%, #2C3E50 50%);
     font-weight: normal;max-width: 480px;min-width:480px}
@@ -33,9 +33,9 @@ p a:hover {color: #dff9fb;text-decoration: none}
 .headline1 {display: block;text-align: left;padding-top: 20px;color: #2C3E50;font-size:20px;font-family: "Jaldi", sans-serif}
 .headline2 {font-family: "Jaldi", sans-serif;display: block;color: #dff9fb;font-size: 20px}
 .button:hover {border: 1px solid #2C3E50}
-.prediction-description-area {text-align: right}
+.prediction-description-area {text-align: right; padding:10px}
 .big {font-size: 36px;font-weight: bold}
 .big-icon {font-size: 56px}
-.smaller {font-size: 14px;color: #dff9fb;padding-bottom: 10px; position: fixed; bottom: 0}
+.smaller {font-size: 14px;color: #2C3E50; position: fixed; bottom: 0}
 .medium {font-size: 16px;color: #2C3E50}
 
