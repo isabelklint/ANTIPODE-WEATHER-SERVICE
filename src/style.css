@@ -1,31 +1,29 @@
-body {height: 100%;background: linear-gradient(90deg, #E74C3C 50%, #2C3E50 50%);
+body {font-size: 12px; height: 100%;background: linear-gradient(90deg, #E74C3C 50%, #2C3E50 50%);
     font-weight: normal}
-img {height: 100px;width: 140px;  padding: 0, margin: 0 auto;}
-p {margin-bottom: 0px !important}
-p#day-time {font-size:12px}
-form {background-color: #2C3E50;font-size: 12px;
+img {height: 100px;width: 140px;  padding: 0; margin: 0 auto;}
+p {margin-bottom: 0 !important}
+form {background-color: #2C3E50;
     width: 201px;border-top: none; padding-left: 1px;
     border-left: none;border-right: none;
-    margin-right: 0px;margin-bottom: 3px;
+    margin-right: 0;margin-bottom: 3px;
     line-height: 18px;float: left}
 button {background-color: #E74C3C;border-top: none;
     border-left: none;border-right: 2px solid #2C3E50;
-    border-bottom: 8px solid #2C3E50;color: #E74C3C;
-    font-size: small;width: 24px;margin: 0 auto;line-height: 18px;
+    border-bottom: 8px solid #2C3E50;color: #E74C3C;width: 24px;margin: 0 auto;line-height: 18px;
     float: right}
 input {border-top: none;border-left: 1px solid #2C3E50;
     border-right: none;
     padding-left: 5px;
     border-bottom: 8px solid #2C3E50;
     background-color: #C0392C;color: white}
-input.locationbar {background-color: #C0392C}
+.locationbar {background-color: #C0392C}
 input:focus {outline: none}
 
 a:link {color: #95afc0;text-decoration: none}
 a:visited {color: #95afc0;text-decoration: none}
 a:hover {color: #dff9fb;text-decoration: none}
 
-a.active {color: #dff9fb;cursor: default}
+.active {color: #dff9fb;cursor: default}
 
 p a:link {color: #2C3E50;text-decoration: none}
 p a:visited {color: #2C3E50;text-decoration: none}
@@ -40,7 +38,7 @@ p a:hover {color: #dff9fb;text-decoration: none}
 .container {max-width: 800px;min-width:500px}
 .min {opacity: 0.6}
 .max {font-weight: bold}
-.box {display: inline-block !important;margin-left: 15px;margin-top: 0}
+.box {display: inline-block;margin-left: 15px;margin-top: 0}
 .insidebox {width: 176px;}
 .col {color: #dff9fb}
 .headline1 {display: block;text-align: left;padding-top: 20px;
@@ -50,7 +48,7 @@ p a:hover {color: #dff9fb;text-decoration: none}
 .button:hover {border-top: 2px 
     solid #2C3E50; border-bottom: none;
     border-right:0; border-left: 3px solid #2C3E50}
-.prediction-description-area {text-align: right;font-size: 12px}
+.prediction-description-area {text-align: right}
 #last-five-days {padding-left: 10px; color: white; font-size: 10px;text-align: center;margin-top: 10px}
 .big {font-size: 36px;font-weight: bold}
 .big-icon {font-size: 56px}
