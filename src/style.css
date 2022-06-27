@@ -2,7 +2,7 @@ body {font-size: 12px; height: 100%;background: linear-gradient(90deg, #E74C3C 5
 img {height: 80px;width: 112px;  padding: 0; margin: 0 auto;}
 p {margin-bottom: 0 !important}
 form {background-color: #2C3E50;width: 180px;border-top: none;border-left: none;border-right: none;margin-right: 0;margin-bottom: 3px;line-height: 18px;float: left}
-button {background-color: #E74C3C;border-top: none;border-left: none;border-right: 2px solid #2C3E50;border-bottom: 8px solid #2C3E50;color: #E74C3C;width: 20px;margin: 0 auto;line-height: 14px;float: right}
+button {background-color: #E74C3C;border-top: none;border-left: none;border-right: 2px solid #2C3E50;border-bottom: 3px solid #2C3E50;color: #E74C3C;width: 20px;margin: 0 auto;line-height: 17px;float: right}
 input { border-top: none;border-left: 1px solid #2C3E50;border-right: none;padding-left: 5px;border-bottom: 8px solid #2C3E50;background-color: #C0392C;color: white}
 input:focus {outline: none}
 h2 a.active {color: #dff9fb;cursor: default}
