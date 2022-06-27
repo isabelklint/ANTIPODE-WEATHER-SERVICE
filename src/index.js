@@ -103,10 +103,10 @@ function setUpsidedownTemp(response) {
         let faIcon = getfaIcon(icon);
         document.querySelector("#upsidedown-icon").innerHTML =
           faIcon;
-        } else {
-            setWaves();
-        }
+    } else {
+        setWaves();
     }
+}
 
 function getUpsidedown(city) {
     let city1 = city;
@@ -146,6 +146,11 @@ function switchToFahrenheit (event) {
     let switchTemp = document.querySelector("#temp");
     let ftemp = (cvalue * 9/5) + 32;
     switchTemp.innerHTML = Math.round(ftemp);
+    let switchUTemp = document.querySelector("#upsidedown-temp");
+    let uTemp = document.querySelector("#upsidedown-temp").innerHTML;
+    let switchUUnits = document.querySelector("#units");
+    switchUTemp.innerHTML = Math.round((uTemp * 9/5) + 32);
+    switchUUnits.innerHTML = "°F"
 }
 
 function switchToCentigrade (event) {
@@ -154,6 +159,11 @@ function switchToCentigrade (event) {
     centigradeLink.classList.add("active");
     let switchTemp = document.querySelector("#temp");
     switchTemp.innerHTML = cvalue;
+    let switchUTemp = document.querySelector("#upsidedown-temp");
+    let uTemp = document.querySelector("#upsidedown-temp").innerHTML;
+    let switchUUnits = document.querySelector("#units");
+    switchUTemp.innerHTML = Math.round((uTemp -32 ) * 5/9);
+    switchUUnits.innerHTML = "°C"
 }
 
 let fdegree = document.querySelector("#fahrenheitLink");

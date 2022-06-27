@@ -2,6 +2,7 @@ body {height: 100%;background: linear-gradient(90deg, #E74C3C 50%, #2C3E50 50%);
     font-weight: normal}
 img {height: 100px;width: 140px;  padding: 0, margin: 0 auto;}
 p {margin-bottom: 0px !important}
+p#day-time {font-size:12px}
 form {background-color: #2C3E50;font-size: 12px;
     width: 201px;border-top: none; padding-left: 1px;
     border-left: none;border-right: none;
