@@ -1,9 +1,9 @@
 body {font-size: 12px; height: 100%;background: linear-gradient(90deg, #E74C3C 50%, #2C3E50 50%);font-weight: normal}
-img {height: 100px;width: 140px;  padding: 0; margin: 0 auto;}
+img {height: 80px;width: 112px;  padding: 0; margin: 0 auto;}
 p {margin-bottom: 0 !important}
-form {background-color: #2C3E50;width: 201px;border-top: none; padding-left: 1px;border-left: none;border-right: none;margin-right: 0;margin-bottom: 3px;line-height: 18px;float: left}
-button {background-color: #E74C3C;border-top: none;border-left: none;border-right: 2px solid #2C3E50;border-bottom: 8px solid #2C3E50;color: #E74C3C;width: 24px;margin: 0 auto;line-height: 18px;float: right}
-input {border-top: none;border-left: 1px solid #2C3E50;border-right: none;padding-left: 5px;border-bottom: 8px solid #2C3E50;background-color: #C0392C;color: white}
+form {background-color: #2C3E50;width: 180px;border-top: none;border-left: none;border-right: none;margin-right: 0;margin-bottom: 3px;line-height: 18px;float: left}
+button {background-color: #E74C3C;border-top: none;border-left: none;border-right: 2px solid #2C3E50;border-bottom: 8px solid #2C3E50;color: #E74C3C;width: 20px;margin: 0 auto;line-height: 14px;float: right}
+input { border-top: none;border-left: 1px solid #2C3E50;border-right: none;padding-left: 5px;border-bottom: 8px solid #2C3E50;background-color: #C0392C;color: white}
 input:focus {outline: none}
 h2 a.active {color: #dff9fb;cursor: default}
 a:link {color: #95afc0;text-decoration: none}
@@ -12,7 +12,7 @@ a:hover {color: #dff9fb;text-decoration: none}
 p a:link {color: #2C3E50;text-decoration: none}
 p a:visited {color: #2C3E50;text-decoration: none}
 p a:hover {color: #dff9fb;text-decoration: none}
-#search-area {margin-bottom: 30px;margin-left: 125px}
+#search-area {margin-bottom: 30px;margin-left: 100px}
 #left {width:40%;transform: scale(-1,-1);color: #2C3E50}
 #middle {width:20%;padding: 0; margin: 0 auto; display: block;text-align: center}
 #right {width: 40%;color: #dff9fb}
@@ -20,13 +20,13 @@ p a:hover {color: #dff9fb;text-decoration: none}
 #bar {font-size: 36px;color: #95afc0}
 #last-five-days {padding-left: 10px; color: white; font-size: 10px;text-align: center;margin-top: 10px}
 .locationbar {background-color: #C0392C}
-.container {max-width: 800px;min-width:500px}
+.container {max-width: 800px;min-width:480px}
 .min {opacity: 0.6}
 .max {font-weight: bold}
 .box {display: inline-block;margin-left: 15px;margin-top: 0}
-.insidebox {width: 176px;}
+.insidebox {width: 154px;}
 .col {color: #dff9fb}
-.headline1 {display: block;text-align: left;padding-top: 20px;color: #2C3E50;font-size:20px;font-family: "Jaldi", sans-serif}
+.headline1 {background:#E74C3C;display: block;text-align: left;padding-top: 20px;color: #2C3E50;font-size:20px;font-family: "Jaldi", sans-serif}
 .headline2 {font-family: "Jaldi", sans-serif;display: block;color: #dff9fb;font-size: 20px}
 .button:hover {border-top: 2px solid #2C3E50;border-bottom: none;border-right:0; border-left: 3px solid #2C3E50}
 .prediction-description-area {text-align: right}
