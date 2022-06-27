@@ -197,29 +197,29 @@ let cvalue = null;
 // PREDICTION AREA
 
 function formatDay(timestamp){
-    let date = new Date(timestamp + 1000);
-    let day = date.getDay();
+    let adate = new Date(timestamp * 1000);
+    let day = adate.getDay();
     let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
     return days[day];
 }
 
 function lastFiveDays(response) {
-    let days = response.data.daily;
+    console.log(response);
+    let prediction = response.data.daily;
     let lastFiveColumns = document.querySelector("#last-five-days");
     let lastFiveColumnsHTML = `<div class="row">`;
 
-    days.forEach(function (day, index) {
-        let icon = day.weather[0].icon;
+    prediction.forEach(function(pday, index) {
+        let icon = pday.weather[0].icon;
         let faIcon = getfaIcon(icon);
         if (index < 4) {
-            lastFiveColumnsHTML = 
-            lastFiveColumnsHTML + `
-                <div class="col prediction">
-                    <p class="date">${formatDay(day.dt)}</p>
-                    <p class="mini-icon">${faIcon}</p>
-                    <p class="min">${Math.round(day.temp.min)}°</p>
-                    <p class="max">${Math.round(day.temp.max)}°</p>
-                </div>`;
+            lastFiveColumnsHTML +=`
+            <div class="col prediction">
+                <p class="adate">${formatDay(pday.dt)}</p>
+                <p class="mini-icon">${faIcon}</p>
+                <p class="min">${Math.round(pday.temp.min)}°</p>
+                <p class="max">${Math.round(pday.temp.max)}°</p>
+            </div>`;
         }
     });
     lastFiveColumnsHTML  = lastFiveColumnsHTML  + `</div>`;
