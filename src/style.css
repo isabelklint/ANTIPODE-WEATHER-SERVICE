@@ -10,12 +10,12 @@ h2 a.active {color: #dff9fb;cursor: default}
 a:link {color: #95afc0;text-decoration: none}
 a:visited {color: #95afc0;text-decoration: none}
 a:hover {color: #dff9fb;text-decoration: none}
-p a:link {color: #2C3E50;text-decoration: none}
-p a:visited {color: #2C3E50;text-decoration: none}
-p a:hover {color: #dff9fb;text-decoration: none}
+p a:link {color: #dff9fb;text-decoration: none}
+p a:visited {color: #dff9fb;text-decoration: none}
+p a:hover {color: #95afc0;text-decoration: none}
 .align-items-center {padding: 0}
 #search-area {margin-bottom: 30px;margin-left: 80px}
-#left {width:188px;transform: scale(-1,-1);color: #2C3E50}
+#left {width:188px;transform: scale(-1,-1);color: #2C3E50;padding:10px}
 #middle {width:96px;padding: 0; margin: 0 auto; display: block;text-align: center}
 #right {width: 188px;color: #dff9fb; padding: 10px; margin: 0 auto}
 #name-temp {text-align: left}
@@ -36,6 +36,6 @@ p a:hover {color: #dff9fb;text-decoration: none}
 .prediction-description-area {text-align: right; padding:10px}
 .big {font-size: 36px;font-weight: bold}
 .big-icon {font-size: 56px}
-.smaller {font-size: 14px;color: #2C3E50; position: fixed; bottom: 0}
+.smaller {font-size: 14px;color: #dff9fb; position: fixed; bottom: 0}
 .medium {font-size: 16px;color: #2C3E50}
 
