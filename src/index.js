@@ -66,6 +66,8 @@ function setWaves () {
     document.querySelector("#upsidedown-city-name").innerHTML = "NO ANTIPODE";
     document.querySelector("#upsidedown-icon").innerHTML = `<i class="fa-solid fa-water"></i>`;
     document.querySelector("#searchbar").value = "";
+    document.querySelector("#upsidedown-temp").innerHTML = "";
+    document.querySelector("#units").innerHTML = "";
 }
 
 let locationButton = document.querySelector("#locationbutton");
@@ -141,29 +143,47 @@ function doUpsidedownClick(event) {
 
 function switchToFahrenheit (event) {
     event.preventDefault();
-    centigradeLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let switchTemp = document.querySelector("#temp");
-    let ftemp = (cvalue * 9/5) + 32;
-    switchTemp.innerHTML = Math.round(ftemp);
-    let switchUTemp = document.querySelector("#upsidedown-temp");
-    let uTemp = document.querySelector("#upsidedown-temp").innerHTML;
-    let switchUUnits = document.querySelector("#units");
-    switchUTemp.innerHTML = Math.round((uTemp * 9/5) + 32);
-    switchUUnits.innerHTML = "°F"
+    if (document.querySelector("#temp").innerHTML !=="") {
+        if (document.querySelector("#units").innerHTML !== `°F`) {
+            centigradeLink.classList.remove("active");
+            fahrenheitLink.classList.add("active");
+            let switchTemp = document.querySelector("#temp");
+            let ftemp = (cvalue * 9/5) + 32;
+            switchTemp.innerHTML = Math.round(ftemp);
+            let utemp = document.querySelector("#upsidedown-temp").innerHTML;
+            if (utemp !== "") {
+                let switchUTemp = document.querySelector("#upsidedown-temp");
+                switchUTemp.innerHTML = Math.round((utemp * 9/5) + 32);
+                units.innerHTML = `°F`;
+            } else {
+                units.innerHTML = "";
+            }
+        } else {
+            alert("Already in fahrenheit.")
+        }
+    }
 }
 
 function switchToCentigrade (event) {
     event.preventDefault();
-    fahrenheitLink.classList.remove("active");
-    centigradeLink.classList.add("active");
-    let switchTemp = document.querySelector("#temp");
-    switchTemp.innerHTML = cvalue;
-    let switchUTemp = document.querySelector("#upsidedown-temp");
-    let uTemp = document.querySelector("#upsidedown-temp").innerHTML;
-    let switchUUnits = document.querySelector("#units");
-    switchUTemp.innerHTML = Math.round((uTemp -32 ) * 5/9);
-    switchUUnits.innerHTML = "°C"
+    if (document.querySelector("#temp").innerHTML !=="") {
+        if (document.querySelector("#units").innerHTML !== `°C`) {
+            fahrenheitLink.classList.remove("active");
+            centigradeLink.classList.add("active");
+            let switchTemp = document.querySelector("#temp");
+            switchTemp.innerHTML = cvalue;
+            let switchUTemp = document.querySelector("#upsidedown-temp");
+            let utemp = document.querySelector("#upsidedown-temp").innerHTML;
+            if (utemp !== "") {
+                switchUTemp.innerHTML = Math.round((utemp -32 ) * 5/9);
+                units.innerHTML = `°C`;
+                } else {
+                    units.innerHTML = "";
+                }
+        } else {
+        alert("Already in centigrade.")
+        }
+    }
 }
 
 let fdegree = document.querySelector("#fahrenheitLink");

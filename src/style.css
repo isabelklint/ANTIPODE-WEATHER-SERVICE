@@ -21,7 +21,7 @@ input {border-top: none;border-left: 1px solid #2C3E50;
 input.locationbar {background-color: #C0392C}
 input:focus {outline: none}
 a:link {color: #95afc0;text-decoration: none}
-a:visited {color: #2C3E50;text-decoration: none}
+a:visited {color: #95AFC0;text-decoration: none}
 a:hover {color: #dff9fb;text-decoration: none}
 a.active {color: #dff9fb;cursor: default}
 #search-area {margin-bottom: 30px;margin-left: 125px}
